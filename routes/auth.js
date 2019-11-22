@@ -11,6 +11,7 @@ const saltRounds = 10;
 
 // POST '/auth/signup'
 router.post('/signup', (req, res, next) => {
+
   // 2 - Destructure the password and username
   const { username, password } = req.body;
 
@@ -59,7 +60,6 @@ router.post('/signup', (req, res, next) => {
       // > Once the user is cretaed , redirect to home
     })
     .catch(err => console.log(err));
-
 });
 
 // POST 'auth/login'
@@ -103,7 +103,7 @@ router.post('/login', (req, res, next) => {
 
       // Else - if password incorrect - return error
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log(err)); 
 });
 
 module.exports = router;
