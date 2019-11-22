@@ -11,7 +11,7 @@ const MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
 
 var preLoginRouter = require('./routes/prelogin');
-var siteRouter = require('./routes/site-routes');
+//var siteRouter = require('./routes/site-routes');
 
 var app = express();
 
@@ -30,8 +30,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', preLoginRouter);
+//app.use('/', siteRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
