@@ -3,13 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+require('dotenv').config();
+
+var preLoginRouter = require('./routes/prelogin');
+var siteRouter = require('./routes/site-routes');
 
 var app = express();
 
-mongoose.connect()
+mongoose.connect('mongodb://localhost:27017/Petsit', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
