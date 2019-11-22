@@ -13,23 +13,15 @@ const saltRounds = 10;
 router.post('/signup', (req, res, next) => {
 
   // 2 - Destructure the password and username
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   // 3 - Check if the username and password are empty strings
   if (username === '' || password === '') {
     res.render('prelogin-views/signup', {
-      errorMessage: 'Provide username and password.',
+      errorMessage: 'Provide email and password.',
     });
     return;
   }
-
-  // if (zxcvbn(password).score < 3) {
-  //   res.render('auth-views/signup', {
-  //     errorMessage: 'Password is to weak. Try again pal.',
-  //   });
-  //   return;
-  // }
-
   // 4 - Check if the username already exists - if so send error
 
   User.findOne({ username })
