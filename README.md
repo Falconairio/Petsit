@@ -13,19 +13,12 @@ This is an app used for having someone take care of and for taking care of pets.
 
 - **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
 - **homepage** - As a user I want to be able to view all the information for the service 
-
 - **login** - As a user I want to be able to log in on the web page so that I can get back to my account
 - **logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
 - **signup** - As a user I want to be able to sign up to use the features of the website
-- **pet** - As a user I want to be able to see the pets registered to my account
-- **pet/add** - As a user I want to be able to add pets to my account for use in our services.
-- **pet/id** - As a user I want to be able to see the information for a sepecfic pet 
-- **pet/delete** - As a user I want to be able to delete a pet from my account
-- **request/id** - As a user I want to be able to view the information for a specific request
-- **request/add** - As a user I want to be able to add a request to the site
-- **request/delete** - As a user I want to be able to delete a specific request
-- **user** - As a user I want to be able to see the information for my account 
-- **user/edit-profile** - As a user I want to be able to edit the information for my account 
+- **pet** - As a user I want to be able to see the pets registered to my account, change their information, and delete their information if needed 
+- **request** - As a user I want to be able to make requests for my pets and delete the requests if needed
+- **user** - As a user I want to be able to see and edit the information for my account 
 
 ---
 
@@ -60,9 +53,9 @@ Pet Model
     description: {Type: String},
     breed: {Type: String},
     petType: {Type: String, required: true, enum: ['Dog','Cat','Bird','Fish','Rabbit','Reptile']},
-    request: {Type: Schema.Types.ObjectId, ref: 'User'}
-    visible: {type: boolean, value: true},
-    dietaryReq: {type: String}
+    request: {Type: Schema.Types.ObjectId, ref: 'User'},
+    visible: {Type: Boolean, value: true},
+    dietaryReq: {Type: String}
 }
 
 ```
@@ -75,7 +68,7 @@ Request Model
     requesterName: {Type: String, required: true},
     requestTitle: {Type: String, required: true},
     requestDesc: {Type: String, required: true},
-    pet: {Type: Schema.Types.ObjectId, ref: 'Request', required: true}
+    pet: {Type: Schema.Types.ObjectId, ref: 'Request', required: true},
     requestDate: {Type: Date, default: Date.now()}
 }
 
@@ -83,11 +76,6 @@ Request Model
 
 ---
 
-## Views
-
----
-
-## Routes 
 
 ## Routes 
 
