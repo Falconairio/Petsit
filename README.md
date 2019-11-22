@@ -77,14 +77,17 @@ Request Model
 | `GET`      | `/login`                           | Renders `login` form view.                                   |                                                          |
 | `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                                      |
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  }                                    |
-| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |                                                          |
-| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [userName], [imageUrl] [age], [description], [location], [pet]} |
+| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password, userName,  }                                    |
+| `GET`      | `/private/user`            | Private route. Renders `user` form view.             |                                                          |
+| `PUT`      | `/private/user/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [userName], [imageUrl], [age], [description], [location], [pet]} |
 | `GET`      | `/private/pet`               | Private route. Render the `pet-page` view.                  |                                                          |
-| `POST`     | `/private/pet/add`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                                 |
-| `DELETE`   | `/private/favorites/:restaurantId` | Private route. Deletes the existing favorite from the current user. |                                                          |
-| `GET`      | `/restaurants`                     | Renders `restaurant-list` view.                              |                                                          |
-| `GET`      | `/restaurants/details/:id`         | Render `restaurant-details` view for the particular restaurant. |                                                          |
+| `GET`      | `/private/pet/:id`               | Private route. Render the `selected pet` view.                  |                                                          |
+| `POST`     | `/private/pet/add`              | Private route. Adds a new pet for the current user.     | { name, age, breed, description, species, type, dietary_request, picture }                                 |
+| `DELETE`   | `/private/pet` | Private route. Deletes the existing selected pet from the current user. |                                                          |
+| `GET`      | `/private/request`               | Private route. Render the `request` view.                  |                                                          |
+| `GET`      | `/private/request/:id`               | Private route. Render the `selected request` view.                  |                                                          |
+| `POST`     | `/private/request/add`              | Private route. Adds a new request for the current user.     | { date, title, description, image }                                 |
+| `DELETE`   | `/private/request` | Private route. Deletes the existing request from the current user. |                                                          |
 
 
 ---
