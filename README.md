@@ -7,21 +7,34 @@ This is an app used for having someone take care of and for taking care of pets.
 
 ## User Stories
 
-* 404 - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
-* 
+**404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
+**homepage** - As a user I want to be able to view all the information for the service 
+**login** - As a user I want to be able to log in on the web page so that I can get back to my account
+**logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
+**signup** - As a user I want to be able to sign up to use the features of the website
+**pet** - As a user I want to be able to see the pets registered to my account
+**pet/add** - As a user I want to be able to add pets to my account for use in our services.
+**pet/id** - As a user I want to be able to see the information for a sepecfic pet 
+**pet/delete** - As a user I want to be able to delete a pet from my account
+**request/id** - As a user I want to be able to view the information for a specific request
+**request/add** - As a user I want to be able to add a request to the site
+**request/delete** - As a user I want to be able to delete a specific request
+**user** - As a user I want to be able to see the information for my account 
+**user/edit-profile** - As a user I want to be able to edit the information for my account 
 
 ---
 
 ## Models 
 
-User Model
+User Model 
 
-```javascript 
+```javascript
 
 {
-    pictureUrl: {Type: String, required: true},
     email: {Type: String, required: true},
     password: {Type: String, required: true},
+    userId: {Type: Schema.Types.ObjectId, ref: 'User'},
+    pictureUrl: {Type: String, required: true},
     name: {Type: String, required: true},
     age: {Type: Number, min: 18, required: true},
     description: {Type: String},
@@ -37,7 +50,7 @@ Pet Model
 
 {
     name: {Type: String, required: true},
-    age: {Type: Number, min: 18, required: true},
+    age: {Type: Number, required: true},
     petPictureUrl: {Type: String, required: true},
     description: {Type: String},
     breed: {Type: String},
@@ -71,20 +84,25 @@ Request Model
 
 ## Routes 
 
+## Routes 
+
 | **Method** | **Route**                          | **Description**                                              | Request  - Body                                          |
 | ---------- | ---------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------- |
-| `GET`      | `/`                                | Main page route.  Renders home `index` view.                 |                                                          |
-| `GET`      | `/login`                           | Renders `login` form view.                                   |                                                          |
-| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                                      |
+| `GET`      | `/private`                                | Main page route.  Renders home `index` view.                 |                                                          |
+| `GET`      | `/`                           | Renders `login` form view.                                   |                                                          |
+| `POST`     | `/`                           | Sends Login form data to the server.                         | { email, password }                                      |
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  }                                    |
-| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |                                                          |
-| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [userName], [imageUrl] [age], [description], [location], [pet]} |
+| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password, userName,  }                                    |
+| `GET`      | `/private/user`            | Private route. Renders `user` form view.             |                                                          |
+| `PUT`      | `/private/user/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [userName], [imageUrl], [age], [description], [location], [pet]} |
 | `GET`      | `/private/pet`               | Private route. Render the `pet-page` view.                  |                                                          |
-| `POST`     | `/private/pet/add`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                                 |
-| `DELETE`   | `/private/favorites/:restaurantId` | Private route. Deletes the existing favorite from the current user. |                                                          |
-| `GET`      | `/restaurants`                     | Renders `restaurant-list` view.                              |                                                          |
-| `GET`      | `/restaurants/details/:id`         | Render `restaurant-details` view for the particular restaurant. |                                                          |
+| `GET`      | `/private/pet/:id`               | Private route. Render the `selected pet` view.                  |                                                          |
+| `POST`     | `/private/pet/add`              | Private route. Adds a new pet for the current user.     | { name, age, breed, description, species, type, dietary_request, picture }                                 |
+| `DELETE`   | `/private/pet` | Private route. Deletes the existing selected pet from the current user. |                                                          |
+| `GET`      | `/private/request`               | Private route. Render the `request` view.                  |                                                          |
+| `GET`      | `/private/request/:id`               | Private route. Render the `selected request` view.                  |                                                          |
+| `POST`     | `/private/request/add`              | Private route. Adds a new request for the current user.     | { date, title, description, image }                                 |
+| `DELETE`   | `/private/request` | Private route. Deletes the existing request from the current user. |                                                          |
 
 
 ---
