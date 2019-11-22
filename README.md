@@ -25,8 +25,8 @@ User Model
     name: {Type: String, required: true},
     age: {Type: Number, min: 18, required: true},
     description: {Type: String},
-    location: {Type: String, required: true}
-    pets: {Type: []},
+    location: {Type: String, required: true},
+    pets: {Type: Schema.Types.ObjectId, ref: 'Pet'},
 }
 
 ```
@@ -38,12 +38,13 @@ Pet Model
 {
     name: {Type: String, required: true},
     age: {Type: Number, min: 18, required: true},
+    petPictureUrl: {Type: String, required: true},
     description: {Type: String},
     breed: {Type: String},
     petType: {Type: String, required: true, enum: ['Dog','Cat','Bird','Fish','Rabbit','Reptile']},
-    visible: {type: boolean, value: true}
+    request: {Type: Schema.Types.ObjectId, ref: 'User'}
+    visible: {type: boolean, value: true},
     dietaryReq: {type: String}
-
 }
 
 ```
@@ -56,7 +57,7 @@ Request Model
     requesterName: {Type: String, required: true},
     requestTitle: {Type: String, required: true},
     requestDesc: {Type: String, required: true},
-    petPictureUrl: {Type: String, required: true},
+    pet: {Type: Schema.Types.ObjectId, ref: 'Request', required: true}
     requestDate: {Type: Date, default: Date.now()}
 }
 
@@ -78,9 +79,9 @@ Request Model
 | `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                                          |
 | `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  }                                    |
 | `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |                                                          |
-| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                                          |
-| `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                                 |
+| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [userName], [imageUrl] [age], [description], [location], [pet]} |
+| `GET`      | `/private/pet`               | Private route. Render the `pet-page` view.                  |                                                          |
+| `POST`     | `/private/pet/add`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                                 |
 | `DELETE`   | `/private/favorites/:restaurantId` | Private route. Deletes the existing favorite from the current user. |                                                          |
 | `GET`      | `/restaurants`                     | Renders `restaurant-list` view.                              |                                                          |
 | `GET`      | `/restaurants/details/:id`         | Render `restaurant-details` view for the particular restaurant. |                                                          |
