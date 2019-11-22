@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     email: {type: String, required: true},
     password: {type: String, required: true},
-    pictureUrl: {type: String, required: true},
+   /* pictureUrl: {type: String, required: true},
     name: {type: String, required: true},
     age: {type: Number, min: 18, required: true},
     description: {type: String},
     location: {type: String, required: true},
-    pets: {type: Schema.Types.ObjectId, ref: 'Pet'},
+    pets: {type: Schema.Types.ObjectId, ref: 'Pet'}, */
 });
 
 const User = mongoose.model('User', userSchema);

@@ -13,10 +13,10 @@ const saltRounds = 10;
 router.post('/signup', (req, res, next) => {
 
   // 2 - Destructure the password and username
-  const { email, password } = req.body;
+  const { email , password } = req.body;
 
   // 3 - Check if the username and password are empty strings
-  if (username === '' || password === '') {
+  if (email === '' || password === '') {
     res.render('prelogin-views/signup', {
       errorMessage: 'Provide email and password.',
     });
@@ -24,7 +24,7 @@ router.post('/signup', (req, res, next) => {
   }
   // 4 - Check if the username already exists - if so send error
 
-  User.findOne({ username })
+  User.findOne({ email })
     .then(user => {
       // > If username exists already send the error
       if (user) {
@@ -39,7 +39,7 @@ router.post('/signup', (req, res, next) => {
       const hashedPassword = bcrypt.hashSync(password, salt);
 
       // > Create the user in the DB
-      User.create({ username, password: hashedPassword })
+      User.create({ email, password: hashedPassword })
         .then(newUserObj => {
           res.redirect('/');
         })
@@ -57,10 +57,10 @@ router.post('/signup', (req, res, next) => {
 // POST 'auth/login'
 router.post('/login', (req, res, next) => {
   // Deconstruct the password and the user
-  const { username, password: enteredPassword } = req.body;
+  const { email, password: enteredPassword } = req.body;
 
   // Check if username or password are empty strings
-  if (username === '' || enteredPassword === '') {
+  if (email === '' || enteredPassword === '') {
     res.render('prelogin-views/login', {
       errorMessage: 'Provide username and password',
     });
@@ -68,7 +68,7 @@ router.post('/login', (req, res, next) => {
   }
 
   // Find the user by username
-  User.findOne({ username })
+  User.findOne({ email })
     .then(userData => {
       // If - username doesn't exist - return error
       if (!userData) {
