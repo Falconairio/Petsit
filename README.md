@@ -1,5 +1,9 @@
 # Petsit
 
+![Petsit](https://user-images.githubusercontent.com/52801554/69431232-9b6a0380-0d37-11ea-8007-d48c551b3475.png)
+
+---
+
 ## App Description
 This is an app used for having someone take care of and for taking care of pets. There will be multiple kinds of pets you can select for use in the features. You can register as a user and volunteer to take care of pets through requests. You can also register pets to you user and make requests for people to take care of your pet. On the main page there are all the requests filtered by date. There are buttons on the main page that filter the results by pet. Under the filter buttons there is a make request button where you can make a request for pet sitting, dog walking, fish feeding, whatever. 
 
@@ -7,20 +11,21 @@ This is an app used for having someone take care of and for taking care of pets.
 
 ## User Stories
 
-**404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
-**homepage** - As a user I want to be able to view all the information for the service 
-**login** - As a user I want to be able to log in on the web page so that I can get back to my account
-**logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
-**signup** - As a user I want to be able to sign up to use the features of the website
-**pet** - As a user I want to be able to see the pets registered to my account
-**pet/add** - As a user I want to be able to add pets to my account for use in our services.
-**pet/id** - As a user I want to be able to see the information for a sepecfic pet 
-**pet/delete** - As a user I want to be able to delete a pet from my account
-**request/id** - As a user I want to be able to view the information for a specific request
-**request/add** - As a user I want to be able to add a request to the site
-**request/delete** - As a user I want to be able to delete a specific request
-**user** - As a user I want to be able to see the information for my account 
-**user/edit-profile** - As a user I want to be able to edit the information for my account 
+- **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault.
+- **homepage** - As a user I want to be able to view all the information for the service 
+
+- **login** - As a user I want to be able to log in on the web page so that I can get back to my account
+- **logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
+- **signup** - As a user I want to be able to sign up to use the features of the website
+- **pet** - As a user I want to be able to see the pets registered to my account
+- **pet/add** - As a user I want to be able to add pets to my account for use in our services.
+- **pet/id** - As a user I want to be able to see the information for a sepecfic pet 
+- **pet/delete** - As a user I want to be able to delete a pet from my account
+- **request/id** - As a user I want to be able to view the information for a specific request
+- **request/add** - As a user I want to be able to add a request to the site
+- **request/delete** - As a user I want to be able to delete a specific request
+- **user** - As a user I want to be able to see the information for my account 
+- **user/edit-profile** - As a user I want to be able to edit the information for my account 
 
 ---
 
