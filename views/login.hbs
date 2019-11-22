@@ -1,9 +1,17 @@
 <h1>Petsit</h1>
 
-<form>
-    <label>Username</label>
-    <input>
+<form action='/auth/login' method='POST'>
 
-    <label>Password</label>
-    <input>
+  <label for=''>Username</label>
+  <input type='text' name='username'>
+
+  <label for=''>Password</label>
+  <input type='password' name='password'>
+
+  <button type='submit'>LOGIN</button>
+
+    <p class="account-message">
+      Don't have an account? <a href="/signup">Sign up</a>
+    </p>
+
 </form>
