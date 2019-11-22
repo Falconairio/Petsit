@@ -61,7 +61,7 @@ Pet Model
     breed: {Type: String},
     petType: {Type: String, required: true, enum: ['Dog','Cat','Bird','Fish','Rabbit','Reptile']},
     request: {Type: Schema.Types.ObjectId, ref: 'User'}
-    visible: {type: boolean, value: true},
+    visible: {Type: boolean, value: true},
     dietaryReq: {type: String}
 }
 
@@ -75,7 +75,7 @@ Request Model
     requesterName: {Type: String, required: true},
     requestTitle: {Type: String, required: true},
     requestDesc: {Type: String, required: true},
-    pet: {Type: Schema.Types.ObjectId, ref: 'Request', required: true}
+    pet: {Type: Schema.Types.ObjectId, ref: 'Request', required: true},
     requestDate: {Type: Date, default: Date.now()}
 }
 
