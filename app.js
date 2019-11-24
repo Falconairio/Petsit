@@ -11,7 +11,7 @@ const MongoStore = require('connect-mongo')(session);
 require('dotenv').config();
 
 var preLoginRouter = require('./routes/prelogin');
-//var siteRouter = require('./routes/site-routes');
+var postLoginRouter = require('./routes/postlogin');
 
 var app = express();
 
@@ -30,8 +30,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    // cookie: { maxAge: 3600000 } // 1 hour
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 60 * 60 * 24 * 7, // Default - 14 days
+    }),
+  }),
+);
+
 app.use('/', preLoginRouter);
-//app.use('/', siteRouter);
+app.use('/', postLoginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -57,7 +57,7 @@ router.post('/signup', (req, res, next) => {
 // POST 'auth/login'
 router.post('/login', (req, res, next) => {
   // Deconstruct the password and the user
-  const { email, password: enteredPassword } = req.body;
+  const { email , password: enteredPassword } = req.body;
 
   // Check if username or password are empty strings
   if (email === '' || enteredPassword === '') {
@@ -71,6 +71,9 @@ router.post('/login', (req, res, next) => {
   User.findOne({ email })
     .then(userData => {
       // If - username doesn't exist - return error
+      //console.log(req.session);
+      //console.log(userData)
+      
       if (!userData) {
         res.render('prelogin-views/login', { errorMessage: 'Username not found!' });
         return;
@@ -90,7 +93,7 @@ router.post('/login', (req, res, next) => {
         // Save the login in the session ( and create cookie )
         // And redirect the user
         req.session.currentUser = userData;
-        res.redirect('prelogin-views/signup');
+        res.redirect('../postlogin-views/homepage');
       }
 
       // Else - if password incorrect - return error
