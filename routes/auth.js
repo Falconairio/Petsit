@@ -13,7 +13,7 @@ const saltRounds = 10;
 router.post('/signup', (req, res, next) => {
 
   // 2 - Destructure the password and username
-  const { email , password } = req.body;
+  const { email , password , picture, name , description } = req.body;
 
   // 3 - Check if the username and password are empty strings
   if (email === '' || password === '') {
@@ -39,7 +39,7 @@ router.post('/signup', (req, res, next) => {
       const hashedPassword = bcrypt.hashSync(password, salt);
 
       // > Create the user in the DB
-      User.create({ email, password: hashedPassword })
+      User.create({ email, password: hashedPassword , picture , name, description , pets: null})
         .then(newUserObj => {
           res.redirect('/');
         })
@@ -90,7 +90,7 @@ router.post('/login', (req, res, next) => {
         // Save the login in the session ( and create cookie )
         // And redirect the user
         req.session.currentUser = userData;
-        res.redirect('/');
+        res.redirect('prelogin-views/signup');
       }
 
       // Else - if password incorrect - return error
