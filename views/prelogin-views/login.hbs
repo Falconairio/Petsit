@@ -1,19 +1,18 @@
-<h1>Petsit</h1>
-
-<form action='/auth/login' method='POST'>
+<div class = 'container'>
+  <form action='/auth/login' method='POST' class = 'login-form'>
 
   <input type='text' name='email' placeholder="email">
 
   <input type='password' name='password' placeholder="password">
 
-  <button type='submit'>LOGIN</button>
+  <button type='submit' class = 'form-btn'>LOGIN</button>
 
     <p class="account-message">
-      Don't have an account? <a href="/signup">Sign up</a>
+      Don't have an account? <br> <a href="/signup">Sign up</a>
     </p>
 
+      {{#if errorMessage}}
+        <div class="error-message">{{ errorMessage }}</div>
+      {{/if}}
 </form>
-
-{{#if errorMessage}}
-  <div class="error-message">{{ errorMessage }}</div>
-{{/if}}
+</div>

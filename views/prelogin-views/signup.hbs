@@ -10,15 +10,17 @@
 
     <input type='text' name='name' placeholder="Name">
 
-    <textarea type = 'text' name = 'description' id = 'desc' placeholder = "Description"></textarea>
+    <textarea type = 'text' name = 'description' placeholder = "Description"></textarea>
 
     <button class='form-btn' type='submit'>Submit</button>
+
+    {{#if errorMessage}}
+        <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
   </form>
 </div>
 {{!-- error message display --}} 
 
-{{#if errorMessage}}
-  <div class="error-message">{{ errorMessage }}</div>
-{{/if}}
+
 
 <!--<input type='text' id = 'desc' name='description' placeholder="Description"> -->
