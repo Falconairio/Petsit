@@ -18,12 +18,12 @@
 
 .signup-form input {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;
     border: 0px solid rgb(223, 223, 223);
     box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
     border-radius: 5px;
     padding: 10px 30px;
-    text-align: center;
+    text-align: left;
     font-style: italic;
 }
 
@@ -44,4 +44,18 @@
     color: white;
     font-family: 'Calistoga', cursive;
     font-size: 1.5rem;
+}
+#desc {
+    padding-left: -50px;
+}
+.signup-form textarea {
+    margin-top: 20px;
+    border: 0px solid rgb(223, 223, 223);
+    box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
+    border-radius: 5px;
+    padding: 10px 30px;
+    text-align: left;
+    font-style: italic;
+    height: 60px;   
+    resize: none;
 }
