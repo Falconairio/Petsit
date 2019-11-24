@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 731px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form input {
+    display: flex;
+    margin-top: 30px;
+    border: 0px solid rgb(223, 223, 223);
+    box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
+    border-radius: 5px;
+    padding: 10px 30px;
+    text-align: center;
+    font-style: italic;
+}
+
+::placeholder {
+    color: rgb(235, 233, 233);
+}
+
+.form-btn {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: #FF8B8B;
+    border: 0px solid rgb(223, 223, 223);
+    box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
+    border-radius: 5px;
+    padding: 8px 30px;
+    width: fit-content;
+    color: white;
+    font-family: 'Calistoga', cursive;
+    font-size: 1.5rem;
+}

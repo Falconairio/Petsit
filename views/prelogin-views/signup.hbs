@@ -1,18 +1,20 @@
-<form action='/auth/signup' method='POST'>
 
-  <input type='email' name='email' placeholder='Email'>
+<div class="container">
+  <form action='/auth/signup' method='POST' class="signup-form">
 
-  <input type='password' name='password' placeholder="Password">
+    <input type='email' name='email' placeholder='Email'>
 
-  <input type='text' name='picture' placeholder="Picture Url">
+    <input type='password' name='password' placeholder="Password">
 
-  <input type='text' name='name' placeholder="Name">
+    <input type='text' name='picture' placeholder="Picture Url">
 
-  <input type='text' name='description' placeholder="Description">
+    <input type='text' name='name' placeholder="Name">
 
-  <button type='submit'>Submit</button>
-</form>
+    <input type='text' name='description' placeholder="Description">
 
+    <button class='form-btn' type='submit'>Submit</button>
+  </form>
+</div>
 {{!-- error message display --}} 
 
 {{#if errorMessage}}
