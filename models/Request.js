@@ -6,7 +6,8 @@ const RequestSchema = new Schema({
     requestTitle: {type: String, required: true},
     requestDesc: {type: String, required: true},
     pet: {type: Schema.Types.ObjectId, ref: 'Request', required: true},
-    requestDate: {type: Date, default: Date.now()}
+    requestDate: {type: Date, default: Date.now()},
+    requestFulfilled: {type: Boolean}
 });
 
 const Request = mongoose.model('Request', RequestSchema);
