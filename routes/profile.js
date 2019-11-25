@@ -3,8 +3,7 @@ var router = express.Router();
 
 // GET '/logout'
 router.get('/', (req, res, next) => {
-    const { data } = req.session.currentUser;
-    res.render('postlogin-views/profile', {title: 'User Profile'}, data);
+    res.render('postlogin-views/profile', {title: 'User Profile', user: req.session.currentUser});
   });
 
 module.exports = router;

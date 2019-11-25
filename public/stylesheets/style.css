@@ -249,3 +249,9 @@ a:active {
     margin-left: -1px;
     margin-top: -30px;
 }
+
+.profilepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
