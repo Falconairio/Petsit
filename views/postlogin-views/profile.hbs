@@ -1,6 +1,8 @@
 <div class = 'profilepage'>
-    <img src = '{{user.pictureUrl}}'>
-    <h1>Name: {{ user.name }}</h1>
+    <img src = '{{user.pictureUrl}}' class = 'profileimg'>
+    <div class = "usertext">
+        <h1>{{ user.name }}</h1>
+    </div>
     <div class = "footer-background">
                 <div class="footer-bar">
                     <div class="left-part">
@@ -17,5 +19,5 @@
                     </div>
                 </div>
         </div>
+        <script>document.body.classList.add('homepage')</script>
 </div>
-<script>document.body.classList.add('homepage')</script>

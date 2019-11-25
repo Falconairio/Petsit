@@ -253,4 +253,18 @@ a:active {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin-bottom: auto;
+}
+
+.profileimg {
+    width: auto;
+    height: 390px;
+}
+.usertext {
+    text-align: center;
+    background-color: white;
+}
+.usertext h1 {
+    font-size: 30px;
+    font-weight: lighter;
 }
