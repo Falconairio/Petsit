@@ -185,25 +185,24 @@
     height: 89px;
     width: 163px;
     border-top-right-radius: 30px;
-    /* background-color: rgb(116,139,210); */
-    background-color: red;
+    background-color: rgb(116,139,210);
 }
 
 #right-part {
     height: 89px;
     width: 163px;
     border-top-left-radius: 30px;
-    /* background-color: rgb(116,139,210); */
-    background-color: red;
+    background-color: rgb(116,139,210); 
 }
 
 #middle-part {
     height: 49px;
     width: 49px;
     border-radius: 50px;
-    /* background-color: rgb(116,139,210); */
-    background-color: red;
+    background-color: rgb(116,139,210);
+    background-color: #FF8B8B; 
 }
-.test {
+.footer-background {
     background-color: white;
+    border-style: none;
 }
