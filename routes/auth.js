@@ -42,6 +42,7 @@ router.post('/signup', parser.single('picture'), (req, res, next) => {
       // > Create the user in the DB
       User.create({ email, password: hashedPassword, pictureUrl: image_url , name, description , pets: null, requests: null})
         .then(newUserObj => {
+          req.session.currentUser = newUserObj;
           res.redirect('/home');
         })
         .catch(err => {
@@ -57,7 +58,6 @@ router.post('/signup', parser.single('picture'), (req, res, next) => {
 
 // POST 'auth/login'
 router.post('/login', (req, res, next) => {
-    console.log('fnifuhiuiuber');
   // Deconstruct the password and the user
   const { email , password: enteredPassword } = req.body;
 
