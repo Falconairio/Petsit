@@ -13,7 +13,7 @@ const saltRounds = 10;
 router.post('/signup', parser.single('picture'), (req, res, next) => {
 
   // 2 - Destructure the password and username
-  const { email , password , name , description } = req.body;
+  const { email , password, name , description } = req.body;
 
   // 3 - Check if the username and password are empty strings
   if (email === '' || password === '') {
@@ -40,7 +40,7 @@ router.post('/signup', parser.single('picture'), (req, res, next) => {
 
       const image_url = req.file.secure_url
       // > Create the user in the DB
-      User.create({ email, password: hashedPassword , picture: image_url , name, description , pets: null, requests: null})
+      User.create({ email, password: hashedPassword, pictureUrl: image_url , name, description , pets: null, requests: null})
         .then(newUserObj => {
           res.redirect('/home');
         })
