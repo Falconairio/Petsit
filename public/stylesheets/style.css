@@ -112,10 +112,27 @@
      background-color: rgb(116,139,210);
      background-size: cover;
 }
+.homepageheader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-left: 20px;
+    align-content: center;
+}
+.homepageheader img {
+    margin-bottom: -50px;
+    width: 30px;
+}
+.homepageheader a:active {
+    text-decoration: none;
+    height: 0px;
+    background-color: transparent;
+}
 .homepageheader h1 {
     font-size: 50px;
     color: white;
-    margin-left: 20px;
+    
     margin-top: 20px;
     font-weight: lighter;
     letter-spacing: 2px;;
