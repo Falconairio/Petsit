@@ -57,6 +57,7 @@ router.post('/signup', parser.single('picture'), (req, res, next) => {
 
 // POST 'auth/login'
 router.post('/login', (req, res, next) => {
+    console.log('fnifuhiuiuber');
   // Deconstruct the password and the user
   const { email , password: enteredPassword } = req.body;
 

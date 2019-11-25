@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+
 * {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
+}
+
+a:active {
+    text-decoration: none;
+    height: 0px;
+    background-color: transparent;
 }
 
 .container {
@@ -232,4 +239,12 @@
     height: 21px;
     width: 375px;
     border-style: none;
+}
+.middle-button {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin-left: -1px;
+    margin-top: -30px;
 }
