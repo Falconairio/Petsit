@@ -232,3 +232,12 @@
     width: 375px;
     border-style: none;
 }
+.middle-button {
+    background-color: #FF8B8B;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    margin-left: 8px;
+    margin-top: -30px;
+}
