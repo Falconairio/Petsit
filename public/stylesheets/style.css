@@ -170,7 +170,7 @@
     background-color: rgb(255, 255, 255);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    height: 320px;
+    height: 342px;
 }
 
 .footer-bar {
@@ -183,31 +183,36 @@
 }
 
 #left-part {
-    height: 70px;
+    height: 80px;
     width: 175px;
     border-top-left-radius: 25px;
-    border-top-right-radius: 38px;
+    border-top-right-radius: 24px;
     background-color: rgb(116,139,210);
 }
 
 #right-part {
-    height: 70px;
+    height: 80px;
     width: 175px;
-    border-top-left-radius: 38px;
+    border-top-left-radius: 24px;
     border-top-right-radius: 25px;
     background-color: rgb(116,139,210); 
 }
 
 #middle-part {
-    height: 55px;
+    /* height: 55px;
     width: 55px;
     border-radius: 50px;
     background-color: rgb(116,139,210);
-    background-color: rgb(255, 255, 255); 
+    background-color: rgb(255, 255, 255);  */
+    height:45px;
+    width:90px;
+    border-radius: 0 0 90px 90px;
+    background:rgb(255, 255, 255);
+    margin-top: 10px;
 }
 .footer-background {
     background-color: white;
-    height: 37px;
+    height: 21px;
     width: 375px;
     border-style: none;
 }
