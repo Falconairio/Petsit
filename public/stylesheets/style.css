@@ -179,6 +179,7 @@
     justify-content: baseline;
     align-content: flex-end;
     justify-content: space-between;
+    border-color: transparent;
 }
 
 #left-part {
