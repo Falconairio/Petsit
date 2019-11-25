@@ -124,10 +124,20 @@
     background-color: #F7F7F7;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+    margin-top: 10px;
 }
 .category-display {
     display: flex;
     flex-direction: row;
+}
+.category-text {
+    margin-left: 30px;
+    padding-top: 30px;
+}
+.category-text h1 {
+    font-weight: bolder;
+    font-size: 1.25em;
+
 }
 .petcolumn {
     display: flex;
