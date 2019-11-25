@@ -3,12 +3,16 @@
     <div class = "usertext">
         <h1>{{ user.name }}</h1>
         <div class = 'petcontainer'>
-            <h2>Pets:</h2>
+            <h2>Pets</h2>
             <div class = 'petimages'>
-                <a><div class = "addpetdiv"></div></a>
                 {{#each user.pets}}
                 {{/each}}
+                <a href = 'google.com'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>
             </div>
+        </div>
+        <div class = 'descriptiondiv'>
+            <h2>Description</h2>
+            <p>{{ user.description }}</p>
         </div>
     </div>
     <div class = "footer-background">

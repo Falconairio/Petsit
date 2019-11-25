@@ -300,6 +300,8 @@ a:active {
 .usertext {
     text-align: center;
     background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 .usertext h1 {
     font-size: 30px;
@@ -311,7 +313,6 @@ a:active {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 200px;
 }
 .addpetdiv {
     width: 80px;
@@ -319,7 +320,24 @@ a:active {
     border-radius: 2px;
     box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
 }
+.addpetdiv img {
+    margin-left: 25px;
+    margin-top: 7px;
+}
 .petimages {
     margin-left: 10px;
     margin-top: 10px;
+}
+.descriptiondiv {
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-right: 40px;
+}
+.descriptiondiv p {
+    margin-top: 10px;
+    font-size: 20px;
+    
+    overflow-wrap: break-word;
 }
