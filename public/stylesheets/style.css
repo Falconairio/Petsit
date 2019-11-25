@@ -155,3 +155,35 @@
     border-top-right-radius: 25px;
     height: 350px;
 }
+
+.footer-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-content: flex-end;
+    justify-content: space-between;
+}
+
+#left-part {
+    height: 89px;
+    width: 163px;
+    border-top-right-radius: 30px;
+    /* background-color: rgb(116,139,210); */
+    background-color: red;
+}
+
+#right-part {
+    height: 89px;
+    width: 163px;
+    border-top-left-radius: 30px;
+    /* background-color: rgb(116,139,210); */
+    background-color: red;
+}
+
+#middle-part {
+    height: 49px;
+    width: 49px;
+    border-radius: 50px;
+    /* background-color: rgb(116,139,210); */
+    background-color: red;
+}
