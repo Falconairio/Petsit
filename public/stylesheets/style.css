@@ -121,10 +121,11 @@
     letter-spacing: 2px;;
 }
 .category-container {
-    background-color: #F7F7F7;
+    background-color: rgb(240, 240, 240);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    margin-top: 10px;
+    margin-top: 20px;
+    height: 350px;
 }
 .category-display {
     display: flex;
@@ -137,9 +138,20 @@
 .category-text h1 {
     font-weight: bolder;
     font-size: 1.25em;
-
+    
 }
 .petcolumn {
     display: flex;
     flex-direction: column;
+}
+
+.request-body {
+    padding-top: 200px;
+}
+
+.request-container {
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 350px;
 }
