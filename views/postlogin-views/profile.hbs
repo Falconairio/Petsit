@@ -2,6 +2,14 @@
     <img src = '{{user.pictureUrl}}' class = 'profileimg'>
     <div class = "usertext">
         <h1>{{ user.name }}</h1>
+        <div class = 'petcontainer'>
+            <h2>Pets:</h2>
+            <div class = 'petimages'>
+                <a><div class = "addpetdiv"></div></a>
+                {{#each user.pets}}
+                {{/each}}
+            </div>
+        </div>
     </div>
     <div class = "footer-background">
                 <div class="footer-bar">
