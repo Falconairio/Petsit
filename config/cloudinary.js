@@ -1,7 +1,6 @@
 const cloudinary = require('cloudinary');
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const multer = require('multer');
-var express = require('require')
  
 cloudinary.config({
   cloud_name: 'frederic',
@@ -11,7 +10,7 @@ cloudinary.config({
 
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  folder: 'name folder',
+  folder: 'petsit-user',
   allowedFormats: ['jpg', 'png']
 });
  

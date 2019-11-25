@@ -2,18 +2,18 @@ var express = require('express');
 const zxcvbn = require('zxcvbn');
 const User = require('./../models/User');
 var router = express.Router();
+const parser = require('./../config/cloudinary')
 
 // 0 - Require bcrypt
 const bcrypt = require('bcrypt');
 // 1 - Specify how many salt rounds
 const saltRounds = 10;
 
-
 // POST '/auth/signup'
-router.post('/signup', (req, res, next) => {
+router.post('/signup', parser.single('picture'), (req, res, next) => {
 
   // 2 - Destructure the password and username
-  const { email , password , picture, name , description } = req.body;
+  const { email , password , name , description } = req.body;
 
   // 3 - Check if the username and password are empty strings
   if (email === '' || password === '') {
@@ -38,10 +38,11 @@ router.post('/signup', (req, res, next) => {
       const salt = bcrypt.genSaltSync(saltRounds);
       const hashedPassword = bcrypt.hashSync(password, salt);
 
+      const image_url = req.file.secure_url
       // > Create the user in the DB
-      User.create({ email, password: hashedPassword , picture , name, description , pets: null, requests: null})
+      User.create({ email, password: hashedPassword , picture: image_url , name, description , pets: null, requests: null})
         .then(newUserObj => {
-          res.redirect('/');
+          res.redirect('/home');
         })
         .catch(err => {
           res.render('prelogin-views/signup', {
