@@ -104,3 +104,15 @@
     width: min-device-width;
 }
 
+.homepage {
+     background-color: rgb(116,139,210);
+     background-size: cover;
+}
+.homepageheader h1 {
+    font-size: 50px;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: lighter;
+    letter-spacing: 2px;;
+}
