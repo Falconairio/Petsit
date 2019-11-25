@@ -283,7 +283,6 @@ a:active {
 .profilepage {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     margin-bottom: auto;
 }
 
@@ -298,4 +297,22 @@ a:active {
 .usertext h1 {
     font-size: 30px;
     font-weight: lighter;
+}
+.petcontainer {
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 200px;
+}
+.addpetdiv {
+    width: 80px;
+    height: 40px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
+}
+.petimages {
+    margin-left: 10px;
+    margin-top: 10px;
 }
