@@ -1,20 +1,42 @@
-<div class="container">
-  <form action='/auth/signup' method='POST' class="signup-form" enctype = "multipart/form-data">
-
-    <input type='email' name='email' placeholder='Email'>
-
-    <input type='password' name='password' placeholder="Password">
+<div class="container-petform">
+  <form action='/auth/add-pet' method='POST' class="petform" enctype = "multipart/form-data">
 
     <input type='file' name='picture' placeholder="Picture Url">
 
-    <input type='text' name='name' placeholder="Name">
+    <select>
+        <optgroup label="pet-type">
+            <option value="default"></option>
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+            <option value="dog">Bird</option>
+            <option value="dog">Rabbit</option>
+            <option value="dog">Fish</option>
+            <option value="dog">Reptile</option>
+        </optgroup>
+    </select>
+
+    <input type='text' name='name' placeholder='Name..'>
+
+    <input type='number' name='age' placeholder="Age..">
+
+    <input type='text' name='breed' placeholder="Breed of your pet..">
 
     <textarea type = 'text' name = 'description' placeholder = "Description"></textarea>
 
-    <button class='form-btn' type='submit'>Submit</button>
+    <button class='form-btn' type='submit'>Add</button>
 
     {{#if errorMessage}}
         <div class="error-message">{{ errorMessage }}</div>
     {{/if}}
   </form>
 </div>
+
+
+
+
+
+
+
+
+
+

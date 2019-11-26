@@ -370,3 +370,15 @@ a:active {
     display:flex;
     align-self: flex-end;
 }
+
+/* PET FORM */
+.container-petform {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-petform form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
