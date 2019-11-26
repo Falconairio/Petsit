@@ -348,6 +348,8 @@ a:active {
     height: 21px;
     width: 375px;
     border-style: none;
+    position: fixed;
+    bottom: 48px;
 }
 .middle-button {
     position: absolute;
@@ -362,6 +364,7 @@ a:active {
     display: flex;
     flex-direction: column;
     margin-bottom: auto;
+    background-color: white;
 }
 
 .profileimg {
@@ -397,6 +400,12 @@ a:active {
     border-radius: 2px;
     box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
 }
+.petimg {
+    width: 80px;
+    height: 40px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
+}
 .addpetdiv img {
     margin-left: 25px;
     margin-top: 7px;
@@ -404,18 +413,20 @@ a:active {
 .petimages {
     margin-left: 10px;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
 }
 .descriptiondiv {
     text-align: left;
     margin-left: 50px;
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
+
     margin-right: 40px;
 }
 .descriptiondiv p {
     margin-top: 10px;
     font-size: 20px;
-    
     overflow-wrap: break-word;
 }
 .editimg {
@@ -423,7 +434,6 @@ a:active {
     display:flex;
     align-self: flex-end;
 }
-
 /* PET FORM */
 .container-petform {
     display: flex;

@@ -164,4 +164,19 @@ router.post('/edit', parser.single('picture'), (req, res, next) => {
     
 });
 
+router.post('/delete',(req,res,next) => {
+  //grab the current user in the database
+  User.findById(req.session.currentUser._id)
+  .then((user) => { //resolve the promise created 
+    User.findByIdAndDelete(user) 
+      .then( (data) => {
+        console.log(data);
+        res.redirect('/')
+      })
+      .catch( (err) => console.log(err));
+  }).catch((err) => {
+    console.log(err);
+  })
+})
+
 module.exports = router;

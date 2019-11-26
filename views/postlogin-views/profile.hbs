@@ -6,9 +6,12 @@
         <div class = 'petcontainer'>
             <h2>Pets</h2>
             <div class = 'petimages'>
-                {{#each user.pets}}
-                {{/each}}
-                <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>
+                {{#if pet.petPictureUrl}}
+                    <img src = '{{pet.petPictureUrl}}' class = 'petimg'>
+                {{/if}}
+                {{#else}}
+                    <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>
+                {{/else}}
             </div>
         </div>
         <div class = 'descriptiondiv'>
@@ -16,21 +19,28 @@
             <p>{{ user.description }}</p>
         </div>
     </div>
-    <div class = "footer-background">
-                <div class="footer-bar">
-                    <div class="left-part">
-                        <a href = '/home'><img src = 'images/homeicon.svg'></a>
-                        <a href = '/userrequests'><img src = 'images/requestsicon.svg'></a>
-                    </div>
-                    <div class="middle-part">
-                        <div class = "bluebackground"></div>
-                        <a><img src = 'images/button.svg' class = 'middle-button'></a> 
-                    </div>
-                    <div class="right-part">
-                        <a href = '/notifications'><img src = 'images/notificationsicon.svg'></a>
-                        <a href = '/profile'><img src = 'images/profileicon.svg'</a>
-                    </div>
-                </div>
-        </div>
         <script>document.body.classList.add('homepage')</script>
-</div>
+<script>
+    let footer = document.createElement('div');
+    footer.innerHTML = `
+    <div class = "footer-background">
+             <div class="footer-bar">
+                <div class="left-part">
+                    <a href = '/home'><img src = 'images/homeicon.svg'></a>
+                    <a href = '/userrequests'><img src = 'images/requestsicon.svg'></a>
+                </div>
+                <div class="middle-part">
+                    <a href ='/request' class = 'requestimage'><div><img src = 'images/button.svg' class = 'middle-button'></div></a> 
+                </div>
+                <div class="right-part">
+                    <a href = '/notifications'><img src = 'images/notificationsicon.svg'></a>
+                    <a href = '/profile'><img src = 'images/profileicon.svg'</a>
+                </div>
+            </div>
+    </div>
+    `
+    if(window.screen.width <=375) {
+        document.body.appendChild(footer);
+    }
+    console.log(window.screen.width)
+</script>
