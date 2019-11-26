@@ -1,0 +1,38 @@
+<div>
+  <form action='/profile' method='POST' class="signup-form" enctype = "multipart/form-data">
+
+    <input type='email' name='email' placeholder='Email' id = 'email'>
+
+    <input type='file' name='picture' placeholder="Picture Url" id = 'picture'>
+
+    <input type='text' name='name' placeholder="Name" id = 'name'>
+
+    <textarea type = 'text' name = 'description' placeholder = "Description" id = 'description'></textarea>
+
+    <button class='form-btn' type='submit'>Submit</button>
+
+    {{#if errorMessage}}
+        <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
+  </form>
+</div>
+
+<script>
+    document.getElementById("signup-form").onsubmit = function(event){
+        event.preventDefault();
+        const updatedcharacterInfo = {
+        email: document.getElementById('email').value,
+        pictureUrl: document.getElementById('picture').value,
+        name: document.getElementById('name').value,
+        description: document.getElementById('description').value, 
+    };
+  axios.patch(`https://www.mlab.com/databases/heroku_bvtdws79/collections/users${{{user._id}}}`, updatedcharacterInfo)
+    .then(response => {
+          console.log('update successful: ', response);
+          document.getElementById("update-form").reset();
+    })
+    .catch(error => {
+        console.log(error);
+    })
+}
+</script>
