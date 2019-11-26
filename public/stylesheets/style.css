@@ -348,11 +348,13 @@ a:active {
 .descriptiondiv p {
     margin-top: 10px;
     font-size: 20px;
-    
     overflow-wrap: break-word;
 }
 .editimg {
     position: absolute;
     display:flex;
     align-self: flex-end;
+    margin-top: 340px;
+    padding-right: 20px;
+    width: 30px;
 }
