@@ -351,3 +351,8 @@ a:active {
     
     overflow-wrap: break-word;
 }
+.editimg {
+    position: absolute;
+    display:flex;
+    align-self: flex-end;
+}
