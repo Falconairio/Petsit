@@ -6,8 +6,7 @@
         <div class = 'petcontainer'>
             <h2>Pets</h2>
             <div class = 'petimages'>
-                {{#each user.pets}}
-                {{/each}}
+                <img src = '{{pet.petPictureUrl}}' class = 'petimg'>
                 <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>
             </div>
         </div>

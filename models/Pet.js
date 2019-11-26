@@ -9,8 +9,6 @@ const PetSchema = new Schema({
     breed: {type: String},
     petType: {type: String},
     request: {type: Schema.Types.ObjectId, ref: 'User'},
-    visible: {type: Boolean, value: true},
-    dietaryReq: {type: String}
 });
 
 const Pet = mongoose.model('Pet', PetSchema);
