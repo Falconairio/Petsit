@@ -23,7 +23,7 @@
         name: document.getElementById('name').value,
         description: document.getElementById('description').value, 
     };
-  axios.patch(`https://www.mlab.com/databases/heroku_bvtdws79/collections/users/${{{user._id}}}`, updatedcharacterInfo)
+  axios.patch(`https://www.mlab.com/databases/heroku_bvtdws79/collections/users?_id={{{user._id}}}`, updatedcharacterInfo)
     .then(response => {
           console.log('update successful: ', response);
           document.getElementById("form").reset();
