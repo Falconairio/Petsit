@@ -163,4 +163,18 @@ router.post('/edit', parser.single('picture'), (req, res, next) => {
     
 });
 
+router.post('/delete',(req,res,next) => {
+  User.findById(req.session.currentUser._id)
+  .then((user) => {
+    User.findByIdAndDelete(user)
+      .then( (data) => {
+        console.log(data);
+        res.redirect('/')
+      })
+      .catch( (err) => console.log(err));
+  }).catch((err) => {
+    console.log(err);
+  })
+})
+
 module.exports = router;
