@@ -108,17 +108,21 @@ router.post('/login', (req, res, next) => {
 
 router.post('/add-pet', parser.single('picture'), (req, res, next) => {
 
+
   // 2 - Destructure the password and username
-  const { name , age, breed , description,  } = req.body;
+  const { name , age, breed , description  } = req.body;
+
 
       const image_url = req.file.secure_url // to get the image with cloudinary
       // > Create the user in the DB
       Pet.create({ name, age, petPictureUrl: image_url, description, petType: null, requests: null, breed})
         .then(newPetObj => {
+          console.log('it didnt fuck up');
           req.session.currentUser.pets.push(newPetObj._id) = newPetObj;
-          res.redirect('www.google.com');
+          res.redirect('/profile');
         })
         .catch(err => {
+          console.log(err);
             errorMessage: 'Error while creating new pet.'
         })
       // > Once the user is cretaed , redirect to profile
