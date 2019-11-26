@@ -1,6 +1,6 @@
 <div class = 'profilepage'>
-        <img src = '{{user.pictureUrl}}' class = 'profileimg'>
-        <a href = '/profile/edit' class = 'editimg'><div><img src = 'images/Editicon.svg'></div></a>
+    <img src = '{{user.pictureUrl}}' class = 'profileimg'>
+    <a href='/edit' class = 'editimg'><div><img src = 'images/Editicon.svg'></div></a>
     <div class = "usertext">
         <h1>{{ user.name }}</h1>
         <div class = 'petcontainer'>
@@ -8,7 +8,7 @@
             <div class = 'petimages'>
                 {{#each user.pets}}
                 {{/each}}
-                <a href = 'google.com'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>
+                <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>
             </div>
         </div>
         <div class = 'descriptiondiv'>

@@ -8,7 +8,7 @@ const userSchema = new Schema({
     name: {type: String, required: true},
     description: {type: String},
     pets: {type: Schema.Types.ObjectId, ref: 'Pet'}, 
-    requests: {type: Schema.Types.ObjectId, ref: 'Request'}
+    requests: {type: [Schema.Types.ObjectId], ref: 'Request'}
 });
 
 const User = mongoose.model('User', userSchema);

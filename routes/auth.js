@@ -1,8 +1,9 @@
 var express = require('express');
 const zxcvbn = require('zxcvbn');
 const User = require('./../models/User');
+const Pet = require('./../models/Pet');
 var router = express.Router();
-const parser = require('./../config/cloudinary')
+const parser = require('./../config/cloudinary');
 
 // 0 - Require bcrypt
 const bcrypt = require('bcrypt');
@@ -40,12 +41,13 @@ router.post('/signup', parser.single('picture'), (req, res, next) => {
 
       const image_url = req.file.secure_url
       // > Create the user in the DB
-      User.create({ email, password: hashedPassword, pictureUrl: image_url , name, description , pets: null, requests: null})
+      User.create({ email, password: hashedPassword, pictureUrl: image_url , name, description , requests: []})
         .then(newUserObj => {
           req.session.currentUser = newUserObj;
           res.redirect('/home');
         })
         .catch(err => {
+          console.log(err);
           res.render('prelogin-views/signup', {
             errorMessage: 'Error while creating new username.',
           });
@@ -101,6 +103,64 @@ router.post('/login', (req, res, next) => {
       // Else - if password incorrect - return error
     })
     .catch(err => console.log(err)); 
+});
+
+//ADD A PET FORM
+
+router.post('/add-pet', parser.single('picture'), (req, res, next) => {
+
+
+  // 2 - Destructure the password and username
+  const { name , age, breed , description  } = req.body;
+
+      const image_url = req.file.secure_url // to get the image with cloudinary
+      // > Create the user in the DB
+      Pet.create({ name, age, petPictureUrl: image_url, description, petType: null, requests: null, breed})
+        .then(newPetObj => {
+          
+          User.findById(req.session.currentUser._id)
+          .then( (user) => {
+            // const newPets = user.pets.push(newPetObj._id)
+            console.log('this is the new pet object id',newPetObj._id);
+            // console.log('this is the new pets variable',newPets);
+            console.log('this is the pets array of user',user.pets);
+            console.log('this is the session user pets', req.session.currentUser.pets);
+            User.findByIdAndUpdate(user._id, {$set:  {pets: newPetObj._id}})
+              .then( (data) => {
+                console.log('this is the user data',data);
+                res.redirect('/profile',{title: 'User Profile', user: req.session.currentUser},302); 
+              })
+              .catch( (err) => console.log(err));
+          })
+          .catch( (err) => console.log(err));    
+        })
+        .catch(err => {
+          console.log(err);
+            errorMessage: 'Error while creating new pet.'
+        })
+      // > Once the user is cretaed , redirect to profile
+    .catch(err => console.log(err));
+});
+router.post('/edit', parser.single('picture'), (req, res, next) => {
+    const { name , description } = req.body;
+
+    const image_url = req.file.secure_url
+  
+    User.findById(req.session.currentUser._id)
+      .then( (user) => {
+        User.findByIdAndUpdate(user._id, {$set:  {
+            name: name,
+            pictureUrl: image_url,
+            description: description
+        }})
+          .then( (data) => {
+            console.log(data);
+            res.redirect('/profile',{title: 'User test profile', user: user},302); 
+          })
+          .catch( (err) => console.log(err));
+      })
+      .catch( (err) => console.log(err));    
+    
 });
 
 module.exports = router;

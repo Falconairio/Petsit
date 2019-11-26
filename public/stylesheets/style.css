@@ -182,17 +182,31 @@ a:active {
     margin-bottom: 10px;
 }
 
+.animal-section p {
+    color: rgb(2, 2, 34);
+    margin-left: 10px;
+    padding-top: 35px;
+}
+
+.pet {
+    height: 50px;
+    width: auto;
+    margin-left: 10px;
+    margin-top: 13px;
+    position: -webkit-sticky;
+}
+
+.category-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .scrollmenu {
     overflow: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch; /* [3] */
     -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-.animal-section p {
-    color: rgb(2, 2, 34);
-    margin-left: 70px;
-    padding-top: 50px;
 }
 
 .category-display {
@@ -307,6 +321,12 @@ a:active {
     width: auto;
     height: 390px;
 }
+.editimg {
+    display:flex;
+    align-self: flex-end;
+    margin-top: 340px;
+    padding-right: 20px;
+}
 .usertext {
     text-align: center;
     background-color: white;
@@ -354,7 +374,16 @@ a:active {
     position: absolute;
     display:flex;
     align-self: flex-end;
-    margin-top: 340px;
-    padding-right: 20px;
-    width: 30px;
+}
+
+/* PET FORM */
+.container-petform {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-petform form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
