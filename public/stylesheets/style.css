@@ -301,6 +301,8 @@ a:active {
     height: 21px;
     width: 375px;
     border-style: none;
+    position: fixed;
+    bottom: 48px;
 }
 .middle-button {
     position: absolute;
@@ -315,6 +317,7 @@ a:active {
     display: flex;
     flex-direction: column;
     margin-bottom: auto;
+    background-color: white;
 }
 
 .profileimg {
@@ -370,7 +373,8 @@ a:active {
     text-align: left;
     margin-left: 50px;
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
+
     margin-right: 40px;
 }
 .descriptiondiv p {
@@ -383,7 +387,6 @@ a:active {
     display:flex;
     align-self: flex-end;
 }
-
 /* PET FORM */
 .container-petform {
     display: flex;

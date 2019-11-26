@@ -67,7 +67,14 @@
         <div class = "request-container">
             <h1>Latest Requests</h1>
         </div>
-    </div>
+    </div> 
+</div>
+        
+
+<script>document.body.classList.add('homepage')</script>
+<script>
+    let footer = document.createElement('div');
+    footer.innerHTML = `
     <div class = "footer-background">
              <div class="footer-bar">
                 <div class="left-part">
@@ -75,7 +82,7 @@
                     <a href = '/userrequests'><img src = 'images/requestsicon.svg'></a>
                 </div>
                 <div class="middle-part">
-                    <a><img src = 'images/button.svg' class = 'middle-button'></a> 
+                    <a href ='/request' class = 'requestimage'><div><img src = 'images/button.svg' class = 'middle-button'></div></a> 
                 </div>
                 <div class="right-part">
                     <a href = '/notifications'><img src = 'images/notificationsicon.svg'></a>
@@ -83,7 +90,9 @@
                 </div>
             </div>
     </div>
-</div>
-        
-
-<script>document.body.classList.add('homepage')</script>
+    `
+    if(window.screen.width <=375) {
+        document.body.appendChild(footer);
+    }
+    console.log(window.screen.width)
+</script>
