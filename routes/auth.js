@@ -109,7 +109,7 @@ router.post('/login', (req, res, next) => {
 router.post('/add-pet', parser.single('picture'), (req, res, next) => {
 
   // 2 - Destructure the password and username
-  const { name , age, breed , description,  } = req.body;
+  const { name , age, breed , description  } = req.body;
 
       const image_url = req.file.secure_url // to get the image with cloudinary
       // > Create the user in the DB
