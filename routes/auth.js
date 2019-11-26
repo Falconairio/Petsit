@@ -116,7 +116,7 @@ router.post('/add-pet', parser.single('picture'), (req, res, next) => {
       // > Create the user in the DB
       Pet.create({ name, age, petPictureUrl: image_url, description, petType: null, requests: null, breed})
         .then(newPetObj => {
-          User.findByIdAndUpdate(req.session.currentUser._id, {$set: {$push: { pets: newPetObj._id}}}),{new: true}
+          User.findByIdAndUpdate(req.session.currentUser._id, {$set: { pets: newPetObj._id}})
           console.log(req.session.currentUser);
           res.redirect('/profile');
         })
