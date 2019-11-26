@@ -1,8 +1,9 @@
 var express = require('express');
 const zxcvbn = require('zxcvbn');
 const User = require('./../models/User');
+const Pet = require('./../models/Pet');
 var router = express.Router();
-const parser = require('./../config/cloudinary')
+const parser = require('./../config/cloudinary');
 
 // 0 - Require bcrypt
 const bcrypt = require('bcrypt');
@@ -101,6 +102,27 @@ router.post('/login', (req, res, next) => {
       // Else - if password incorrect - return error
     })
     .catch(err => console.log(err)); 
+});
+
+//ADD A PET FORM
+
+router.post('/add-pet', parser.single('picture'), (req, res, next) => {
+
+  // 2 - Destructure the password and username
+  const { name , age, breed , description,  } = req.body;
+
+      const image_url = req.file.secure_url // to get the image with cloudinary
+      // > Create the user in the DB
+      Pet.create({ name, age, petPictureUrl: image_url, description, petType: null, requests: null, breed})
+        .then(newPetObj => {
+          req.session.currentUser.pets.push(newPetObj._id) = newPetObj;
+          res.redirect('www.google.com');
+        })
+        .catch(err => {
+            errorMessage: 'Error while creating new pet.'
+        })
+      // > Once the user is cretaed , redirect to profile
+    .catch(err => console.log(err));
 });
 
 module.exports = router;
