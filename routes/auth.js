@@ -41,7 +41,7 @@ router.post('/signup', parser.single('picture'), (req, res, next) => {
 
       const image_url = req.file.secure_url
       // > Create the user in the DB
-      User.create({ email, password: hashedPassword, pictureUrl: image_url , name, description , pets: null, requests: null})
+      User.create({ email, password: hashedPassword, pictureUrl: image_url , name, description , pets: [], requests: []})
         .then(newUserObj => {
           req.session.currentUser = newUserObj;
           res.redirect('/home');
@@ -117,8 +117,8 @@ router.post('/add-pet', parser.single('picture'), (req, res, next) => {
       // > Create the user in the DB
       Pet.create({ name, age, petPictureUrl: image_url, description, petType: null, requests: null, breed})
         .then(newPetObj => {
-          console.log('it didnt fuck up');
-          req.session.currentUser.pets.push(newPetObj._id) = newPetObj;
+          User.findByIdAndUpdate(req.session.currentUser._id, {$set: {$push: { pets: newPetObj._id}}}),{new: true}
+          console.log(req.session.currentUser);
           res.redirect('/profile');
         })
         .catch(err => {

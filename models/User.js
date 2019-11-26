@@ -7,8 +7,8 @@ const userSchema = new Schema({
     pictureUrl: {type: String},
     name: {type: String, required: true},
     description: {type: String},
-    pets: {type: Schema.Types.ObjectId, ref: 'Pet'}, 
-    requests: {type: Schema.Types.ObjectId, ref: 'Request'}
+    pets: {type: [Schema.Types.ObjectId], ref: 'Pet'}, 
+    requests: {type: [Schema.Types.ObjectId], ref: 'Request'}
 });
 
 const User = mongoose.model('User', userSchema);
