@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68" height="68" viewBox="0 0 68 68">
+  <defs>
+    <filter id="Soustraction_2" x="0" y="0" width="68" height="68" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Soustraction_2)">
+    <path id="Soustraction_2-2" data-name="Soustraction 2" d="M-5330,50a24.846,24.846,0,0,1-9.731-1.965,24.915,24.915,0,0,1-7.946-5.358,24.918,24.918,0,0,1-5.358-7.946A24.855,24.855,0,0,1-5355,25a24.855,24.855,0,0,1,1.964-9.731,24.918,24.918,0,0,1,5.358-7.946,24.915,24.915,0,0,1,7.946-5.358A24.846,24.846,0,0,1-5330,0a24.84,24.84,0,0,1,9.731,1.965,24.915,24.915,0,0,1,7.946,5.358,24.918,24.918,0,0,1,5.358,7.946A24.855,24.855,0,0,1-5305,25a24.855,24.855,0,0,1-1.964,9.731,24.917,24.917,0,0,1-5.358,7.946,24.915,24.915,0,0,1-7.946,5.358A24.84,24.84,0,0,1-5330,50Zm-11-27a2,2,0,0,0-2,2,2,2,0,0,0,2,2h9v9a2,2,0,0,0,2,2,2,2,0,0,0,2-2V27h9a2,2,0,0,0,2-2,2,2,0,0,0-2-2h-9V14a2,2,0,0,0-2-2,2,2,0,0,0-2,2v9Z" transform="translate(5364 6)" fill="#ff8b8b"/>
+  </g>
+</svg>

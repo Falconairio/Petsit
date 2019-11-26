@@ -1,0 +1,20 @@
+<!--<img src = "images/signinimage.png" class = "signinheaderimage">-->
+<div class = 'container' id = "signup">
+  <form action='/auth/login' method='POST' class = 'login-form'>
+
+  <input type='text' name='email' placeholder="email">
+
+  <input type='password' name='password' placeholder="password">
+
+  <button type='submit' class = 'form-btn'>LOGIN</button>
+
+    <p class="account-message">
+      Don't have an account? <br> <a href="/signup">Sign up</a>
+    </p>
+
+      {{#if errorMessage}}
+        <div class="error-message">{{ errorMessage }}</div>
+      {{/if}}
+</form>
+  <!--<img src = "images/signinfooter.png" class = "signinfooterimage">-->
+</div>

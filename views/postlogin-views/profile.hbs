@@ -1,0 +1,36 @@
+<div class = 'profilepage'>
+    <img src = '{{user.pictureUrl}}' class = 'profileimg'>
+    <img src = 'images/Editicon.svg' class = 'editimg'>
+    <div class = "usertext">
+        <h1>{{ user.name }}</h1>
+        <div class = 'petcontainer'>
+            <h2>Pets</h2>
+            <div class = 'petimages'>
+                {{#each user.pets}}
+                {{/each}}
+                <a href = 'google.com'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>
+            </div>
+        </div>
+        <div class = 'descriptiondiv'>
+            <h2>Description</h2>
+            <p>{{ user.description }}</p>
+        </div>
+    </div>
+    <div class = "footer-background">
+                <div class="footer-bar">
+                    <div class="left-part">
+                        <a href = '/home'><img src = 'images/homeicon.svg'></a>
+                        <a href = '/userrequests'><img src = 'images/requestsicon.svg'></a>
+                    </div>
+                    <div class="middle-part">
+                        <div class = "bluebackground"></div>
+                        <a><img src = 'images/button.svg' class = 'middle-button'></a> 
+                    </div>
+                    <div class="right-part">
+                        <a href = '/notifications'><img src = 'images/notificationsicon.svg'></a>
+                        <a href = '/profile'><img src = 'images/profileicon.svg'</a>
+                    </div>
+                </div>
+        </div>
+        <script>document.body.classList.add('homepage')</script>
+</div>

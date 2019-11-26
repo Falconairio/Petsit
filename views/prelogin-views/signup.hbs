@@ -1,0 +1,26 @@
+
+<div class="container" id="signup-bkg">
+  <form action='/auth/signup' method='POST' class="signup-form" enctype = "multipart/form-data">
+
+    <input type='email' name='email' placeholder='Email'>
+
+    <input type='password' name='password' placeholder="Password">
+
+    <input type='file' name='picture' placeholder="Picture Url">
+
+    <input type='text' name='name' placeholder="Name">
+
+    <textarea type = 'text' name = 'description' placeholder = "Description"></textarea>
+
+    <button class='form-btn' type='submit'>Submit</button>
+
+    {{#if errorMessage}}
+        <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
+  </form>
+</div>
+{{!-- error message display --}} 
+
+
+
+<!--<input type='text' id = 'desc' name='description' placeholder="Description"> -->
