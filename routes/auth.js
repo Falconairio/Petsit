@@ -128,7 +128,7 @@ router.post('/add-pet', parser.single('picture'), (req, res, next) => {
             User.findByIdAndUpdate(user._id, {$set:  {pets: newPetObj._id}})
               .then( (data) => {
                 console.log('this is the user data',data);
-                res.redirect('profile',{title: 'User Profile', user: req.session.currentUser}); 
+                res.redirect('/profile',{title: 'User Profile', user: req.session.currentUser},302); 
               })
               .catch( (err) => console.log(err));
           })
@@ -154,7 +154,8 @@ router.post('/edit', parser.single('picture'), (req, res, next) => {
             description: description
         }})
           .then( (data) => {
-            res.redirect('/profile',{title: 'User Profile', user: req.session.currentUser}); 
+            console.log(data);
+            res.redirect('/profile',{title: 'User test profile', user: user},302); 
           })
           .catch( (err) => console.log(err));
       })
