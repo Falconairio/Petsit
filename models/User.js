@@ -7,7 +7,7 @@ const userSchema = new Schema({
     pictureUrl: {type: String},
     name: {type: String, required: true},
     description: {type: String},
-    pets: {type: [Schema.Types.ObjectId], ref: 'Pet'}, 
+    pets: {type: Schema.Types.ObjectId, ref: 'Pet'}, 
     requests: {type: [Schema.Types.ObjectId], ref: 'Request'}
 });
 
