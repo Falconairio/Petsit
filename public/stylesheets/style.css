@@ -321,6 +321,12 @@ a:active {
     width: auto;
     height: 390px;
 }
+.editimg {
+    display:flex;
+    align-self: flex-end;
+    margin-top: 340px;
+    padding-right: 20px;
+}
 .usertext {
     text-align: center;
     background-color: white;

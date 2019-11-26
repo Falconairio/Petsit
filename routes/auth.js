@@ -128,10 +128,9 @@ router.post('/add-pet', parser.single('picture'), (req, res, next) => {
             User.findByIdAndUpdate(user._id, {$set:  {pets: newPetObj._id}})
               .then( (data) => {
                 console.log('this is the user data',data);
-                res.redirect('/profile'); 
+                res.redirect('profile',{title: 'User Profile', user: req.session.currentUser}); 
               })
               .catch( (err) => console.log(err));
-            
           })
           .catch( (err) => console.log(err));    
         })
@@ -141,6 +140,26 @@ router.post('/add-pet', parser.single('picture'), (req, res, next) => {
         })
       // > Once the user is cretaed , redirect to profile
     .catch(err => console.log(err));
+});
+router.post('/edit', parser.single('picture'), (req, res, next) => {
+    const { name , description } = req.body;
+
+    const image_url = req.file.secure_url
+  
+    User.findById(req.session.currentUser._id)
+      .then( (user) => {
+        User.findByIdAndUpdate(user._id, {$set:  {
+            name: name,
+            pictureUrl: image_url,
+            description: description
+        }})
+          .then( (data) => {
+            res.redirect('/profile',{title: 'User Profile', user: req.session.currentUser}); 
+          })
+          .catch( (err) => console.log(err));
+      })
+      .catch( (err) => console.log(err));    
+    
 });
 
 module.exports = router;
