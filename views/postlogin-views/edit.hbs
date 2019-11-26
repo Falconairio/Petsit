@@ -1,5 +1,5 @@
 <div>
-  <form action='/profile' method='POST' class="signup-form" enctype = "multipart/form-data">
+  <form class="signup-form" enctype = "multipart/form-data">
 
     <input type='email' name='email' placeholder='Email' id = 'email'>
 
@@ -29,7 +29,8 @@
   axios.patch(`https://www.mlab.com/databases/heroku_bvtdws79/collections/users${{{user._id}}}`, updatedcharacterInfo)
     .then(response => {
           console.log('update successful: ', response);
-          document.getElementById("update-form").reset();
+          document.getElementById("signup-form").reset();
+          res.redirect('/profile', {user: req.session.currentUser})
     })
     .catch(error => {
         console.log(error);
