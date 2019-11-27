@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const Request = require('./../models/Request')
 const logoutRouter = require('./logout');
 const profileRouter = require('./profile')
 const petRouter = require('./add-pet');
@@ -15,7 +16,11 @@ router.use('/edit',editRouter);
 router.use('/user-requests', userReqRouter);
 
 router.get('/home', function(req, res, next) {
-  res.render('postlogin-views/homepage', {title: 'Welcome to Petsit'});
+  Request.find({})
+  .then( (requests) => {
+    res.render('postlogin-views/homepage', {title: 'Welcome to Petsit', requestList: requests});
+  })
+  .catch( (err) => console.log(err));
 });
 
 module.exports = router;
