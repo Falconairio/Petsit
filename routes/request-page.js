@@ -7,7 +7,19 @@ const Request = require('./../models/Request')
 
 router.get('/:type', (req, res, next) => {
   Request.find({}).populate('pet')
-  .then( (data) => console.log(data))
+  .then( (allRequest) => {
+    allRequest.forEach(request =>{
+      if(request.pet.petType === req.params.type){
+        console.log('heloooooooooo',request);
+        requestFiltered.push(request)
+      }
+    })
+    return requestFiltered
+  })
+  .then(requestFiltered =>{
+    console.log('sdfghjk', requestFiltered);
+    res.render( '/postlogin-views/homepage', {title: 'Welcome to Petsit' , requestList: requestFiltered})
+  })
   .catch( (err) => console.log(err));
 })
 
