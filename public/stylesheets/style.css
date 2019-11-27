@@ -266,12 +266,10 @@ a:active {
     position: inherit;
     display: flex;
     flex-direction: row;
-    width: 500px;
-}
 
+}
 .request-test {
     /* position: sticky; */
-    border: solid 1px red;
     overflow: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;

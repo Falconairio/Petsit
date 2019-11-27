@@ -66,11 +66,15 @@
     <div class="request-body">
         <div class = "request-container">
             <h1>Latest Requests</h1>
-
-                {{#each requestList}}
-                    {{>requestPartial this}}
-                {{/each}}
-
+            <div class="request-test">
+            <div class="row-request">
+                <div class="request-content">
+                    {{#each requestList}}
+                        {{>requestPartial this}}
+                    {{/each}}
+                </div>
+            </div>
+            </div>
         </div>
     </div> 
 </div>
