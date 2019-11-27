@@ -34,6 +34,12 @@ console.log(event.target.classList[0]);
 const typeToFilter = event.target.classList[0];
 
 axios.get(`/request-page/${typeToFilter}`)
+.then(requestList =>{
+    console.log('je suis laaaaaaaa', requestList.data.requestList);
+})
+.catch( (err) => console.log(err));
+
+
 
 
 }
