@@ -141,6 +141,7 @@ router.post('/add-pet', parser.single('picture'), (req, res, next) => {
       // > Once the user is cretaed , redirect to profile
     .catch(err => console.log(err));
 });
+
 router.post('/edit', parser.single('picture'), (req, res, next) => {
     const { name , description } = req.body;
 
