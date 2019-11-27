@@ -21,14 +21,15 @@ router.get('/home', function(req, res, next) {
   Request.find({}).populate('pet')
   .then( (requests) => {
     let newArray = [];
+    if(requests) {
     for(let i = requests.length-1; i >=0; i--) {
       if(requests[i].pet.petType === req.query.petType) {
         newArray.push(requests[i]);
       } else if(req.query.petType === undefined) {
         newArray.push(requests[i]);
       }
-      
     }
+  }
     res.render('postlogin-views/homepage', {title: 'Welcome to Petsit', requestList: newArray});
   })
   .catch( (err) => console.log(err));
