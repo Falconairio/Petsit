@@ -1,22 +1,12 @@
-<<<<<<< HEAD
-<div class="test">
-    <div style="background:no-repeat {{this.pet.petPictureUrl}}" class="request-itself">
-    </div>
-    <div class="request-info">  
-        <h1> {{this.pet.name}} </h1>
-        <p> {{this.pet.age}} </p>
-        <h3>{{this.requesterName}}</h3>
-    </div>
-</div>
-=======
-        <div class="test 1">
+        <div class="test">
         <div style="background:no-repeat url({{this.pet.petPictureUrl}})" class="request-itself">
         </div>
-            <div class="request-info">  
+            <a href="/request-page"> <div class="request-info">  
                 <h1 class = 'petnameh1'></h1>
                 <h3>From {{this.requesterName}}</h3>
                 <p>{{this.requestDesc}}</p>
             </div>
+            </a>
         </div>
 <script>
    document.body.querySelector('.petnameh1').innerHTML = 'this worked';
@@ -31,4 +21,3 @@
         })
         .catch( (err) => console.log(err));
 </script>
->>>>>>> b24a20b053bbbf218c39413a7134c125d4cd5fba
