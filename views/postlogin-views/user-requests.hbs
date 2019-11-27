@@ -1,4 +1,5 @@
 <div class="container-request-form">
+    <h1>Request for {{pet.name}}</h1>
     <form action='/auth/user-requests' method='POST' class="request-form">
 
 
@@ -6,6 +7,7 @@
             <optgroup label="Your pet">
             </optgroup>
         </select> --}}
+        <input type ='text' name='requesterName' 
 
         <input type='text' name='requestTitle' placeholder='Title..'>
 
