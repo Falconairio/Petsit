@@ -20,8 +20,11 @@ router.use('/request-page', reqPageRouter)
 router.get('/home', function(req, res, next) {
   Request.find({}).populate('pet')
   .then( (requests) => {
-    console.log(requests);
-    res.render('postlogin-views/homepage', {title: 'Welcome to Petsit', requestList: requests});
+    let newArray = [];
+    for(let i = requests.length-1; i >=0; i--) {
+      newArray.push(requests[i]);
+    }
+    res.render('postlogin-views/homepage', {title: 'Welcome to Petsit', requestList: newArray});
   })
   .catch( (err) => console.log(err));
 

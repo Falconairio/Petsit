@@ -1,19 +1,18 @@
+<div class = 'testdiv'>
 <div class = 'request-page'>
-    <img src = '{{pet.petPictureUrl}}' class = 'pet-request-img'>
+<div class ='request'>
     <div class = "request-text">
-        <h1>{{ request.requestTitle}}</h1>
-        <div class = 'petcontainer'>
-            <p>{{pet.name}}</p>
-            <p>{{pet.description}}</p>
-        </div>
-        <div class = 'request-descriptiondiv'>
-            <h2>Description</h2>
-            <p>{{ request.description }}</p>
-        </div>
+        <h1>Request Title: {{request.requestTitle}}</h1> 
+        <p>Request Description: {{request.requestDesc}}</p>
+        <p>Request Date: {{request.requestDate}}</p>
+        <img src = '{{pet.petPictureUrl}}' class = 'pet-request-img'>
+            <h1>Pet Name: {{pet.name}}</h1>
+            <p>Pet Description: {{pet.description}}</p>
+            <div class="apply">
+                <a href="/home">APPLY</a>
+            </div>
     </div>
-
-<div class="apply">
-    <a href="/home">APPLY</a>
 </div>
-
-
+</div>
+<script src="./javascript/js.js"></script>
+<!--<script>document.body.classList.remove('homepage')</script>-->

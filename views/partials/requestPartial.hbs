@@ -1,12 +1,12 @@
         <div class="test">
         <div style="background:no-repeat url({{this.pet.petPictureUrl}}); background-size: cover; background-position: center;" class="request-itself">
         </div>
-            <a href="/request-page"> 
+            <a href="/request-page?id={{this._id}}"> 
                 <div class="request-info">  
                     <h2 class = 'pet-name'> {{this.pet.name}} </h2>
-                    <p>{{this.pet.age}}</p>
-                    <h2>{{this.requestTitle}}</h2>
-                    <h3>From {{this.requesterName}}</h3>
+                    <h3>From: </h3><h3>{{this.requesterName}}</h3>
+                    <br>
+                    <h3>Pet Type: </h3><h3>{{this.pet.petType}}</h3>
                 </div>
             </a>
         </div>

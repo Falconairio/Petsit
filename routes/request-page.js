@@ -6,7 +6,6 @@ const Request = require('./../models/Request')
 
 
 router.get('/:type', (req, res, next) => {
-  console.log('heeeeeeeeeere',req.params);
   Request.find({}).populate('pet')
   .then( (data) => console.log(data))
   .catch( (err) => console.log(err));
@@ -14,9 +13,10 @@ router.get('/:type', (req, res, next) => {
 
 
 router.get('/', (req, res, next) => {
-  Request.findById(req.session.currentUser._id)
+  Request.findById(req.query.id).populate('pet')
     .then((result) => {
-      Pet.findById(result.pets)
+      console.log(result);
+      Pet.findById(result.pet)
       .then( (data) => {
         res.render('postlogin-views/request-page', {title: 'Request', request: result, pet: data});
       })

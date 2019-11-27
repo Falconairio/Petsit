@@ -10,7 +10,7 @@ footer.innerHTML = `
                 <a href = ''><img src = 'images/requestsicon.svg'></a>
             </div>
             <div class="middle-part">
-                <a href ='/user-requests' class = 'requestimage'><div><img src = 'images/button.svg' class = 'middle-button'></div></a> 
+                <a href ='/user-requests'><div class = 'requestimage'><img src = 'images/button.svg' class = 'middle-button'></div></a> 
             </div>
             <div class="right-part">
                 <a href = '/notifications'><img src = 'images/notificationsicon.svg'></a>
