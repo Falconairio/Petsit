@@ -172,12 +172,13 @@ router.post('/user-requests', (req, res, next) => {
   const { requestTitle, requestDesc, requestDate } = req.body;
 
   Request.create({requestTitle, requestDate, requestDesc})
-    .then( (newRequestObj) => {console.log(newRequestObj)
-      res.render('/homepage', {title: 'Homepage'}, 302);
+    .then( (newRequestObj) => {
+      console.log(newRequestObj)
+      res.redirect('/home');
+      res.status(302)
     })
     .catch( (err) => console.log(err));
 })
-
 
 
 
