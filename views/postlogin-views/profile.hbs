@@ -6,11 +6,8 @@
         <div class = 'petcontainer'>
             <h2>Pets</h2>
             <div class = 'petimages'>
-                {{#if pet.petPictureUrl}}
-                    <a class = 'petimage'><div><img src = '{{pet.petPictureUrl}}' class = 'petimg'></div></a> 
-                {{else}}   
+                    <a class = 'petimage'><div><img src = '{{pet.petPictureUrl}}' class = 'petimg'></div></a>  
                     <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>      
-                {{/if}}
                     
             </div>
         </div>

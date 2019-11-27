@@ -2,7 +2,7 @@ var express = require('express');
 const zxcvbn = require('zxcvbn');
 const User = require('./../models/User');
 const Pet = require('./../models/Pet');
-const Request = require('./../models/Request')
+const Request = require('./../models/Request');
 var router = express.Router();
 const parser = require('./../config/cloudinary');
 
@@ -112,11 +112,11 @@ router.post('/add-pet', parser.single('picture'), (req, res, next) => {
 
 
   // 2 - Destructure the password and username
-  const { name , age, breed , description  } = req.body;
+  const { name , age, breed, petType , description  } = req.body;
 
       const image_url = req.file.secure_url // to get the image with cloudinary
       // > Create the user in the DB
-      Pet.create({ name, age, petPictureUrl: image_url, description, petType: null, requests: null, breed})
+      Pet.create({ name, age, petPictureUrl: image_url, petType, description, requests: null, breed})
         .then(newPetObj => {
           
           User.findById(req.session.currentUser._id)
