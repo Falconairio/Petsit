@@ -253,6 +253,7 @@ a:active {
     width: 150px;
     background-color: rgb(255, 255, 255);
     display: block;
+    overflow-wrap: break-word;
     background-size: cover; /* to apply to image */
     background-position: center; /* to apply to image */
 }
@@ -285,6 +286,16 @@ a:active {
     width: 125px;
     background-color: rgb(255, 255, 255);
     /* position: relative; */
+    display: block;
+    white-space: nowrap;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+.request-info p {
+    white-space: nowrap;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    width: 1em;
 }
 
 .test {
