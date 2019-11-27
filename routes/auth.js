@@ -167,7 +167,7 @@ router.post('/edit', parser.single('picture'), (req, res, next) => {
 
 // REQUEST FORM
 
-router.post('/user-requests', (req, res, next) => {
+/*router.post('/user-requests', (req, res, next) => {
 
   const { requestTitle, pet, requestDesc, requestDate } = req.body;
 
@@ -176,7 +176,7 @@ router.post('/user-requests', (req, res, next) => {
       res.render('/homepage', {title: 'Homepage', user: user}, 302);
     })
     .catch( (err) => console.log(err));
-})
+})*/
 
 
 
