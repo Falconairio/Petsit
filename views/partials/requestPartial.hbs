@@ -1,8 +1,22 @@
-        <div class="test 1">
+        <div class="test">
         <div style="background:no-repeat url({{this.pet.petPictureUrl}})" class="request-itself">
         </div>
-            <div class="request-info">  
+            <a href="/request-page"> <div class="request-info">  
                 <h1 class = 'petnameh1'></h1>
                 <h3>From {{this.requesterName}}</h3>
             </div>
+            </a>
         </div>
+<script>
+   document.body.querySelector('.petnameh1').innerHTML = 'this worked';
+    var express = require('express');
+    const Pet = require('./../models/Pet');
+    Pet.findById({{this.pet}})
+        .then( (data) => {
+            var name = document.createElement('h1');
+            name.innerHTML = data;
+            var div = document.body.querySelector('.request-info')
+            document.body.insertBefore(name,div)
+        })
+        .catch( (err) => console.log(err));
+</script>
