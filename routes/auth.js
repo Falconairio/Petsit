@@ -2,6 +2,7 @@ var express = require('express');
 const zxcvbn = require('zxcvbn');
 const User = require('./../models/User');
 const Pet = require('./../models/Pet');
+const Request = require('./../Request')
 var router = express.Router();
 const parser = require('./../config/cloudinary');
 
@@ -166,8 +167,15 @@ router.post('/edit', parser.single('picture'), (req, res, next) => {
 
 // REQUEST FORM
 
-router.post('/user-request', (req, res, next) => {
-  
+router.post('/user-requests', (req, res, next) => {
+
+  const {requestTitle, pet, requestDesc, requestDate} = req.body;
+
+  Request.create({requestTitle, pet, requestDate, requestDesc})
+    .then( (newRequestObj) => 
+      console.log(newRequestObj);
+      res.redirect('/homepage', ))
+    .catch( (err) => console.log(err));
 })
 
 
