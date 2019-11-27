@@ -20,7 +20,6 @@ router.use('/request-page', reqPageRouter)
 router.get('/home', function(req, res, next) {
   Request.find({}).populate('pet')
   .then( (requests) => {
-    console.log('this is the req',req.query.petType);
     let newArray = [];
     for(let i = requests.length-1; i >=0; i--) {
       if(requests[i].pet.petType === req.query.petType) {
