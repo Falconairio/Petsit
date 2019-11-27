@@ -536,3 +536,6 @@ a{
     font-family: 'Calistoga', cursive;
     font-size: 2.5rem;
 }
+.pet-request-image {
+    width: 100vw;
+}
