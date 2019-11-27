@@ -178,7 +178,7 @@ a{
     font-size: 1.25em;  
 }
 
-.petcolumn {
+.   column {
     display: flex;
     flex-direction: column;
 }
@@ -536,6 +536,14 @@ a{
     font-family: 'Calistoga', cursive;
     font-size: 2.5rem;
 }
+<<<<<<< HEAD
 .pet-request-image {
     width: 100vw;
 }
+=======
+
+.pet-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+>>>>>>> 2a808efded1b441fec5610992fdb8cc198af98cc
