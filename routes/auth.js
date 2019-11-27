@@ -180,8 +180,7 @@ router.post('/user-requests', (req, res, next) => {
     .catch( (err) => console.log(err));
 })
 
-
-
+// DELETE USER PROFILE
 
 router.post('/delete',(req,res,next) => {
   //grab the current user in the database
