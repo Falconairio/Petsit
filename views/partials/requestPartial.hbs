@@ -1,16 +1,9 @@
- {{!-- <div class="request-test"> --}}
-    {{!-- <div class="row-request"> --}}
-        {{!-- <div class="request-content">  --}}
-            <div class="test 1">
-            <div style="background:no-repeat url({{this.pet.petPictureUrl}})" class="request-itself">
-                {{!-- <img id="pet-image" src="images/dog.jpeg" alt=""/> --}}
-            {{!-- </div> --}}
-            </div>
-                <div class="request-info">  
-                    <h1> {{this.pet.name}} </h1>
-                    <p> {{this.pet.age}} </p>
-                    <h3>{{this.requesterName}}</h3>
-                </div>
-        </div>
-     {{!-- </div> --}}
-{{!-- </div> --}}
+<div class="test">
+    <div style="background:no-repeat {{this.pet.petPictureUrl}}" class="request-itself">
+    </div>
+    <div class="request-info">  
+        <h1> {{this.pet.name}} </h1>
+        <p> {{this.pet.age}} </p>
+        <h3>{{this.requesterName}}</h3>
+    </div>
+</div>
