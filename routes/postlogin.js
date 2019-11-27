@@ -18,6 +18,8 @@ router.use('/user-requests', userReqRouter);
 router.get('/home', function(req, res, next) {
   Request.find({})
   .then( (requests) => {
+    console.log(requests);
+    
     res.render('postlogin-views/homepage', {title: 'Welcome to Petsit', requestList: requests});
   })
   .catch( (err) => console.log(err));

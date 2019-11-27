@@ -289,6 +289,11 @@ a:active {
     /* position: relative; */
 }
 
+.test {
+    display: flex;
+    flex-direction: row;
+}
+
 /* FOOTER BAR */
 
 .footer-bar {
@@ -396,18 +401,21 @@ a:active {
     display: flex;
     flex-direction: column;
 }
+
 .addpetdiv {
     width: 80px;
     height: 40px;
     border-radius: 2px;
     box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
 }
+
 .petimg {
     width: 80px;
     height: 40px;
     border-radius: 2px;
     box-shadow: 3px 3px 15px rgba(195, 195, 195, 0.575);
 }
+
 .addpetdiv img {
     margin-left: 25px;
     margin-top: 7px;
@@ -418,6 +426,7 @@ a:active {
     display: flex;
     flex-direction: row;
 }
+
 .descriptiondiv {
     text-align: left;
     margin-left: 50px;
@@ -425,6 +434,7 @@ a:active {
     margin-right: 40px;
     height: 220px;
 }
+
 .descriptiondiv p {
     margin-top: 10px;
     font-size: 20px;
