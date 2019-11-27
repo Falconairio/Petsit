@@ -5,7 +5,7 @@ const Request = require('./../models/Request')
 
 
 
-router.get('/:type', (req, res, next) => {
+/*router.get('/:type', (req, res, next) => {
   Request.find({}).populate('pet')
   .then( (allRequest) => {
     allRequest.forEach(request =>{
@@ -21,7 +21,7 @@ router.get('/:type', (req, res, next) => {
     res.render( '/postlogin-views/homepage', {title: 'Welcome to Petsit' , requestList: requestFiltered})
   })
   .catch( (err) => console.log(err));
-})
+})*/
 
 
 router.get('/', (req, res, next) => {

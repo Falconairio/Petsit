@@ -25,7 +25,7 @@ if(window.screen.width <=414) {
 console.log(window.screen.width)
 
 //FILTER WITH AXIOS
-const typeOfPet = document.getElementsByClassName("category-content")
+/*const typeOfPet = document.getElementsByClassName("category-content")
 console.log(typeOfPet);
 
 const filterResult = () => {
@@ -46,4 +46,4 @@ axios.get(`/request-page/${typeToFilter}`)
 
 for (let i = 0; i < typeOfPet.length; i++) {
     typeOfPet[i].addEventListener('click',  filterResult)
-}
+}*/
