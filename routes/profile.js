@@ -9,7 +9,6 @@ router.get('/', (req, res, next) => {
     .then((result) => {
       Pet.findById(result.pets)
       .then( (data) => {
-        console.log(data.petPictureUrl);
         res.render('postlogin-views/profile', {title: 'User Profile', user: result, pet: data})
       })
       .catch( (err) => console.log(err));

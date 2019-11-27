@@ -7,11 +7,11 @@
             <h2>Pets</h2>
             <div class = 'petimages'>
                 {{#if pet.petPictureUrl}}
-                    <img src = '{{pet.petPictureUrl}}' class = 'petimg'>
+                    <a class = 'petimage'><div><img src = '{{pet.petPictureUrl}}' class = 'petimg'></div></a> 
+                {{else}}   
+                    <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>      
                 {{/if}}
-                {{#else}}
-                    <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>
-                {{/else}}
+                    
             </div>
         </div>
         <div class = 'descriptiondiv'>
@@ -42,5 +42,4 @@
     if(window.screen.width <=375) {
         document.body.appendChild(footer);
     }
-    console.log(window.screen.width)
 </script>
