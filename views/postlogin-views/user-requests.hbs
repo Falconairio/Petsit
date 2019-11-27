@@ -1,0 +1,32 @@
+<div class="container-request-form">
+    <form action='/auth/userrequest' method='POST' class="request-form" enctype = "multipart/form-data">
+
+
+        <select>
+            <optgroup label="Your pet">
+            </optgroup>
+        </select>
+
+        <input type='text' name='title' placeholder='Title..'>
+
+        <input type='date' name='date' placeholder='date..'>
+
+        <textarea type = 'text' name = 'description' placeholder = "Description"></textarea>
+
+        <button class='form-btn' type='submit'>Send</button>
+
+        {{#if errorMessage}}
+            <div class="error-message">{{ errorMessage }}</div>
+        {{/if}}
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+

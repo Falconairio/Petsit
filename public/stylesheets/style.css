@@ -253,6 +253,8 @@ a:active {
     width: 150px;
     background-color: rgb(255, 255, 255);
     display: block;
+    background-size: cover; /* to apply to image */
+    background-position: center; /* to apply to image */
 }
 
 .row-request {

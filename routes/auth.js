@@ -164,6 +164,16 @@ router.post('/edit', parser.single('picture'), (req, res, next) => {
     
 });
 
+// REQUEST FORM
+
+router.post('/user-request', (req, res, next) => {
+  
+})
+
+
+
+
+
 router.post('/delete',(req,res,next) => {
   //grab the current user in the database
   User.findById(req.session.currentUser._id)
@@ -177,6 +187,9 @@ router.post('/delete',(req,res,next) => {
   }).catch((err) => {
     console.log(err);
   })
-})
+});
+
+
+
 
 module.exports = router;
