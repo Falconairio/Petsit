@@ -304,8 +304,6 @@ a{
     background-color: rgb(255, 255, 255);
     display: block;
     overflow-wrap: break-word;
-    background-size: cover; /* to apply to image */
-    background-position: center; /* to apply to image */
 }
 
 .row-request {
