@@ -373,9 +373,8 @@ a:active {
     text-align: left;
     margin-left: 50px;
     margin-top: 20px;
-    margin-bottom: 120px;
-
     margin-right: 40px;
+    height: 220px;
 }
 .descriptiondiv p {
     margin-top: 10px;
