@@ -310,9 +310,8 @@ a:active {
     position: inherit;
     display: flex;
     flex-direction: row;
-    width: 500px;
-}
 
+}
 .request-test {
     overflow: auto;
     white-space: nowrap;

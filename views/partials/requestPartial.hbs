@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="test">
     <div style="background:no-repeat {{this.pet.petPictureUrl}}" class="request-itself">
     </div>
@@ -7,3 +8,27 @@
         <h3>{{this.requesterName}}</h3>
     </div>
 </div>
+=======
+        <div class="test 1">
+        <div style="background:no-repeat url({{this.pet.petPictureUrl}})" class="request-itself">
+        </div>
+            <div class="request-info">  
+                <h1 class = 'petnameh1'></h1>
+                <h3>From {{this.requesterName}}</h3>
+                <p>{{this.requestDesc}}</p>
+            </div>
+        </div>
+<script>
+   document.body.querySelector('.petnameh1').innerHTML = 'this worked';
+    var express = require('express');
+    const Pet = require('./../models/Pet');
+    Pet.findById({{this.pet}})
+        .then( (data) => {
+            var name = document.createElement('h1');
+            name.innerHTML = data;
+            var div = document.body.querySelector('.request-info')
+            document.body.insertBefore(name,div)
+        })
+        .catch( (err) => console.log(err));
+</script>
+>>>>>>> b24a20b053bbbf218c39413a7134c125d4cd5fba
