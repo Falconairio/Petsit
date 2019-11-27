@@ -167,16 +167,16 @@ router.post('/edit', parser.single('picture'), (req, res, next) => {
 
 // REQUEST FORM
 
-/*router.post('/user-requests', (req, res, next) => {
+router.post('/user-requests', (req, res, next) => {
 
-  const { requestTitle, pet, requestDesc, requestDate } = req.body;
+  const { requestTitle, requestDesc, requestDate } = req.body;
 
-  Request.create({requestTitle, pet, requestDate, requestDesc})
+  Request.create({requestTitle, requestDate, requestDesc})
     .then( (newRequestObj) => {console.log(newRequestObj)
-      res.render('/homepage', {title: 'Homepage', user: user}, 302);
+      res.render('/homepage', {title: 'Homepage'}, 302);
     })
     .catch( (err) => console.log(err));
-})*/
+})
 
 
 
