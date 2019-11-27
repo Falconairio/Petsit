@@ -171,16 +171,23 @@ router.post('/user-requests', (req, res, next) => {
 
   const { requestTitle, requestDesc, requestDate } = req.body;
 
-  Request.create({requestTitle, requestDate, requestDesc})
-    .then( (newRequestObj) => {
-      console.log(newRequestObj)
-      res.redirect('/home');
-      res.status(302)
+  User.findById(req.session.currentUser._id)
+    .then((result) => {
+      Pet.findById(result.pets)
+      .then( (data) => {
+        Request.create({requestTitle, requestDate, requestDesc, requesterName: result.name, pet: data._id})
+          .then( (newRequestObj) => {
+          console.log(newRequestObj)
+          res.redirect('/home');
+          res.status(302)
     })
+          .catch( (err) => console.log(err));
+      })
     .catch( (err) => console.log(err));
-})
-
-// DELETE USER PROFILE
+    }).catch((err) => {
+      console.log(err);
+    })
+  });
 
 router.post('/delete',(req,res,next) => {
   //grab the current user in the database
