@@ -19,7 +19,7 @@ footer.innerHTML = `
         </div>
 </div>
 `
-if(window.screen.width <=375) {
+if(window.screen.width <=414) {
     document.body.appendChild(footer);
 }
 console.log(window.screen.width)
