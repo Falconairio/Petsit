@@ -7,7 +7,7 @@
         <h1>Pet Category</h1>
         <div class = 'category-display scrollmenu'>
             <div class = 'petcolumn'>
-                <a>
+                <a class = "filter" id="cat">
                     <div class="animal-section">
                         <div class="category-content">
                             <img src="images/cat.svg" alt="cat icon" class="cat">
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </a>
-                <a>
+                <a class = "filter" id="dog">
                     <div class="animal-section bottom-div">
                         <div class="category-content">
                             <img src="images/dog.svg" alt="dog icon" class="dog">
@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class = 'petcolumn'>
-                <a>
+                <a class = "filter" id="bird">
                     <div class="animal-section left-margin">
                         <div class="category-content">
                             <img src="images/birds.svg" alt="birds icon" class="bird">
@@ -34,7 +34,7 @@
                     </div>
                     </a>
                 </a>
-                <a>
+                <a class = "filter" id="rabbit">
                     <div class="animal-section bottom-div left-margin">
                         <div class="category-content">
                             <img src="images/rabbits.svg" alt="rabbits icon" class="rabbit">
@@ -44,7 +44,7 @@
                 </a>
             </div>
             <div class = 'petcolumn'>
-                <a>
+                <a class = "filter" id="fish">
                     <div class="animal-section left-margin right-margin">
                         <div class="category-content">
                             <img src="images/fish.svg" alt="fish icon" class="fish">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </a>
-                <a>
+                <a class = "filter" id="reptile">
                     <div class="animal-section bottom-div left-margin right-margin">
                         <div class="category-content">
                             <img src="images/reptile.svg" alt="reptile icon" class="reptile">
@@ -79,30 +79,8 @@
         </div>
     </div> 
 </div>
-        
 
-<script>document.body.classList.add('homepage')</script>
-<script>
-    let footer = document.createElement('div');
-    footer.innerHTML = `
-    <div class = "footer-background">
-             <div class="footer-bar">
-                <div class="left-part">
-                    <a href = '/home'><img src = 'images/homeicon.svg'></a>
-                    <a href = ''><img src = 'images/requestsicon.svg'></a>
-                </div>
-                <div class="middle-part">
-                    <a href ='/user-requests' class = 'requestimage'><div><img src = 'images/button.svg' class = 'middle-button'></div></a> 
-                </div>
-                <div class="right-part">
-                    <a href = '/notifications'><img src = 'images/notificationsicon.svg'></a>
-                    <a href = '/profile'><img src = 'images/profileicon.svg'</a>
-                </div>
-            </div>
-    </div>
-    `
-    if(window.screen.width <=375) {
-        document.body.appendChild(footer);
-    }
-    console.log(window.screen.width)
-</script>
+
+         
+
+<script src="./javascript/js.js"></script>

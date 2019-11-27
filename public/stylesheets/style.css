@@ -178,7 +178,7 @@ a{
     font-size: 1.25em;  
 }
 
-.petcolumn {
+.   column {
     display: flex;
     flex-direction: column;
 }
