@@ -8,7 +8,7 @@
             <h2>Pet</h2>
             <div class = 'petimages'>
                 {{#if pet.petPictureUrl}}
-                    <a class = 'petimage' class = "addpetdiv" style="margin-right: 15px;"><div style="background:no-repeat url({{pet.petPictureUrl}}); background-size: cover; width: 100px; height:60px; background-position: center;"></div></a>
+                    <a class = 'petimage' class = "addpetdiv" style="margin-right: 15px;"><div style="background:no-repeat url({{pet.petPictureUrl}}); background-size: cover; width: 100px; height:60px; background-position: center; border-radius: 5px;"></div></a>
                     <a href = '/add-pet' class = "addpetdiv"><div><img src = 'images/editicon2.svg' class = 'innerimage'></div></a>
                 {{else}}
                     <a href = '/add-pet' class = "addpetdiv"><div><img src = 'images/plus.svg' class = 'innerimage'></div></a>
