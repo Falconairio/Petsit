@@ -10,7 +10,7 @@ footer.innerHTML = `
                 <a href = ''><img src = 'images/requestsicon.svg'></a>
             </div>
             <div class="middle-part">
-                <a href ='/user-requests'><div class = 'requestimage'><img src = 'images/button.svg' class = 'middle-button'></div></a> 
+                <a href ='/user-requests' class = 'requestimage'><div><img src = 'images/button.svg' class = 'middle-button'></div></a> 
             </div>
             <div class="right-part">
                 <a href = '/notifications'><img src = 'images/notificationsicon.svg'></a>
@@ -26,7 +26,7 @@ console.log(window.screen.width)
 
 //FILTER WITH AXIOS
 const typeOfPet = document.getElementsByClassName("category-content")
-console.log(typeOfPet);
+console.log('typeOfPet', typeOfPet);
 
 const filterResult = () => {
 event.preventDefault()
@@ -38,9 +38,6 @@ axios.get(`/request-page/${typeToFilter}`)
     console.log('je suis laaaaaaaa', requestList.data.requestList);
 })
 .catch( (err) => console.log(err));
-
-
-
 
 }
 
