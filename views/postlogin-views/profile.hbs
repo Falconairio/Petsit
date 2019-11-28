@@ -6,9 +6,10 @@
         <div class = 'petcontainer'>
             <h2>Pets</h2>
             <div class = 'petimages'>
-                    <a class = 'petimage'><div><img src = '{{pet.petPictureUrl}}' class = 'petimg'></div></a>  
+                {{#if pet.petPictureUrl}}
+                    <a class = 'petimage'><div><img src = '{{pet.petPictureUrl}}' class = 'petimg'></div></a>
+                {{/if}}
                     <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>      
-                    
             </div>
         </div>
         <div class = 'descriptiondiv'>
