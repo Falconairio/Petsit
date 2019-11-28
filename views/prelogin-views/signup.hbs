@@ -1,22 +1,27 @@
-<div class="container">
-  <form action='/auth/signup' method='POST' class="signup-form" enctype = "multipart/form-data">
+<div class="container-test">
+  <div class="img-container">
+  <img src="images/header.svg" alt="head design" class="head-design">
+  </div>
+  <div class="container">
+    <form action='/auth/signup' method='POST' class="signup-form" enctype = "multipart/form-data">
 
-    <input type='email' name='email' placeholder='Email'>
+      <input type='email' name='email' placeholder='Email'>
 
-    <input type='password' name='password' placeholder="Password">
+      <input type='password' name='password' placeholder="Password">
 
-    <input type='file' name='picture' placeholder="Picture Url">
+      <input type='file' name='picture' placeholder="Picture Url">
 
-    <input type='text' name='name' placeholder="Name">
+      <input type='text' name='name' placeholder="Name">
 
-    <textarea type = 'text' name = 'description' placeholder = "Description"></textarea>
+      <textarea type = 'text' name = 'description' placeholder = "Description"></textarea>
 
-    <button class='form-btn' type='submit'>Submit</button>
+      <button class='form-btn' type='submit'>Submit</button>
 
-    {{#if errorMessage}}
-        <div class="error-message">{{ errorMessage }}</div>
-    {{/if}}
-  </form>
+      {{#if errorMessage}}
+          <div class="error-message">{{ errorMessage }}</div>
+      {{/if}}
+    </form>
+  </div>
 </div>
 {{!-- error message display --}} 
 

@@ -1,36 +1,40 @@
-<div class="container-petform">
-  <form action='/auth/add-pet' method='POST' class="petform" enctype = "multipart/form-data">
+<div class="container-test">
+  <div class="img-container">
+  <img src="images/header.svg" alt="head design" class="head-design">
+  </div>
+  <div class="container-petform">
+    <form action='/auth/add-pet' method='POST'  class="petform signup-form" enctype = "multipart/form-data">
 
-    <input type='file' name='picture' placeholder="Picture Url">
+      <input type='file' name='picture' placeholder="Picture Url">
 
-    <select name = 'petType'>
-        <optgroup label="pet-type">
-            <option value="default"></option>
-            <option value="cat">Cat</option>
-            <option value="dog">Dog</option>
-            <option value="bird">Bird</option>
-            <option value="rabbit">Rabbit</option>
-            <option value="fish">Fish</option>
-            <option value="reptile">Reptile</option>
-        </optgroup>
-    </select>
+      <select name = 'petType'>
+          <optgroup label="pet-type">
+              <option value="" disabled selected hidden>Pet type</option>
+              <option value="cat">Cat</option>
+              <option value="dog">Dog</option>
+              <option value="bird">Bird</option>
+              <option value="rabbit">Rabbit</option>
+              <option value="fish">Fish</option>
+              <option value="reptile">Reptile</option>
+          </optgroup>
+      </select>
 
-    <input type='text' name='name' placeholder='Name..'>
+      <input type='text' name='name' placeholder='Name..'>
 
-    <input type='number' name='age' placeholder="Age..">
+      <input type='number' name='age' placeholder="Age..">
 
-    <input type='text' name='breed' placeholder="Breed of your pet..">
+      <input type='text' name='breed' placeholder="Breed of your pet..">
 
-    <textarea type = 'text' name = 'description' placeholder = "Description"></textarea>
+      <textarea style="border:1px solid rgb(223, 223, 223)" type = 'text' name = 'description' placeholder = "Description"></textarea>
 
-    <button class='form-btn' type='submit'>Add</button>
+      <button class='form-btn' type='submit'>Add</button>
 
-    {{#if errorMessage}}
-        <div class="error-message">{{ errorMessage }}</div>
-    {{/if}}
-  </form>
+      {{#if errorMessage}}
+          <div class="error-message">{{ errorMessage }}</div>
+      {{/if}}
+    </form>
+  </div>
 </div>
-
 
 
 
