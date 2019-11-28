@@ -669,3 +669,12 @@ select {
   .requestinfo h1 {
       margin-left: 2vw;
   }
+  .arrow-left {
+    position: absolute;
+    margin-top: 5.5vw;
+    margin-left: 5.5vw;
+  }
+  .arrow-left img {
+      width: 45px;
+      height: 45px;
+  }

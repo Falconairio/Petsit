@@ -7,13 +7,13 @@ footer.innerHTML = `
          <div class="footer-bar">
             <div class="left-part">
                 <a href = '/home'><img src = 'images/homeicon.svg'></a>
-                <a href = ''><img src = 'images/requestsicon.svg'></a>
+                <a><img src = 'images/requestsicon.svg'></a>
             </div>
             <div class="middle-part">
                 <a href ='/user-requests' class = 'requestimage'><div><img src = 'images/button.svg' class = 'middle-button'></div></a> 
             </div>
             <div class="right-part">
-                <a href = '/notifications'><img src = 'images/notificationsicon.svg'></a>
+                <a><img src = 'images/notificationsicon.svg'></a>
                 <a href = '/profile'><img src = 'images/profileicon.svg'</a>
             </div>
         </div>
