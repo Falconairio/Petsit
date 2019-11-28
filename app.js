@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const hbs = require('hbs');
-const axios = require('axios');
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
