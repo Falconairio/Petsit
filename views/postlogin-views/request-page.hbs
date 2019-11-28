@@ -1,13 +1,22 @@
 <div class = 'testdiv'>
-        <div style="background:no-repeat url({{pet.petPictureUrl}}); background-size: cover; background-position: top center; height: 390px; width: auto"></div>
-        <h1>Request Title: {{request.requestTitle}}</h1> 
-        <br>
-        <p>Request Description: {{request.requestDesc}}</p>
-        <br>
-        <p>Request Date: {{request.requestDate}}</p>
-        <img src = '{{pet.petPictureUrl}}' class = 'pet-request-img'>
-            <h1>Pet Name: {{pet.name}}</h1>
-            <p>Pet Description: {{pet.description}}</p>
+        <div style="background:no-repeat url({{pet.petPictureUrl}}); background-size: cover; background-position: top center; height: 350px; width: auto"></div>
+        <div>
+        <h1 class = 'requestpetname'>{{pet.name}}</h1>
+        <p class = 'requestpetdesc'>{{pet.description}}</p>
+        <hr style ='width: 75vw;margin-left: 12.5vw;margin-top:5vw'>
+        </div>
+        <div class = 'requestinfo'>
+            <br>
+            <h1>Request Title:</h1>
+            <br>
+                <p>{{request.requestTitle}}</p> 
+            <br>
+            <h1>Request Description:</h1>
+            <br>
+                <p>{{request.requestDesc}}</p>
+            <br>
+        </div>
             <div class="apply">
                 <a href="/home">APPLY</a>
+            </div>
 </div>
