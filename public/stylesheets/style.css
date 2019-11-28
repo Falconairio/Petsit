@@ -634,12 +634,13 @@ a{
 
 .apply {
     height: 75px;
-    width: 75%;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
     background-color: #FF8B8B;
-    border-radius: 10px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
     text-align: center;
-    margin-left: 30px;
-    margin-top: 10px;
 }
 
 .apply  a{
@@ -702,4 +703,32 @@ select {
     -moz-appearance: none;
     appearance: none;
     background-color: white;
+  }
+  .requestpetname {
+      text-align: center;
+      font-size: 25px;
+      margin-top: 1vh;
+  }
+  .requestpetdesc {
+      text-align: center;
+      width: 75vw; 
+      margin-left:12.5vw;
+      margin-top:2vw
+  }
+  .requestinfo {
+      text-align: left;
+      width: 75vw;
+      display: flex;
+      flex-direction: column;
+      margin-left: 12.5vw;
+      margin-top: 2vh;
+      /* border: 1px solid black;
+      border-radius: 5px; */
+  }
+  .requestinfo p {
+    margin-left: 2vw;
+    text-align: center;
+  }
+  .requestinfo h1 {
+      margin-left: 2vw;
   }
