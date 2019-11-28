@@ -30,7 +30,7 @@ router.get('/home', function(req, res, next) {
       }
     }
   }
-    res.render('postlogin-views/homepage', {title: 'Welcome to Petsit', requestList: newArray});
+    res.render('postlogin-views/homepage', {title: 'Welcome to Petsit', requestList: newArray, petType: req.query.petType});
   })
   .catch( (err) => console.log(err));
 

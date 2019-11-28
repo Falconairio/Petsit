@@ -150,7 +150,7 @@ router.post('/edit', parser.single('picture'), (req, res, next) => {
     const { name , description } = req.body;
 
     const image_url = req.file.secure_url
-  
+    
     User.findById(req.session.currentUser._id)
       .then( (user) => {
         User.findByIdAndUpdate(user._id, {$set:  {

@@ -65,7 +65,11 @@
     </div>
     <div class="request-body">
         <div class = "request-container">
-            <h1>Latest Requests</h1>
+            <h1>Latest Requests
+                {{#if petType}}
+                    for {{petType}}s
+                {{/if}}
+            </h1>
         <div class="request-test">
             <div class="row-request">
                 <div class="request-content">
