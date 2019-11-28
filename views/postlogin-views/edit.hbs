@@ -1,5 +1,10 @@
-<div class="container-editform">
-  <form action='/auth/edit' method='POST' class="editform" enctype = "multipart/form-data">
+<div class="container-test">
+  <div class="img-container">
+  <img src="images/header.svg" alt="head design" class="head-design">
+  </div>
+
+<div class="container">
+  <form action='/auth/edit' method='POST' class="signup-form" enctype = "multipart/form-data">
 
     <input type='file' name='picture' placeholder="Picture Url" id = 'picture'>
 
@@ -13,9 +18,12 @@
         <div class="error-message">{{ errorMessage }}</div>
     {{/if}}
   </form>
+  <div class="delete-btn">
   <form action = '/auth/delete' method = 'POST'>
-    <button type='submit'>Delete Profile</button>
+    <button type='submit'><img src="images/trash-2.svg" alt="trash" class="trash"> </button>
   </form>
+  </div>
+</div>
 </div>
 
 
