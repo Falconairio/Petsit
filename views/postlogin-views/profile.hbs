@@ -1,15 +1,19 @@
 <div class = 'profilepage'>
-    <img src = '{{user.pictureUrl}}' class = 'profileimg'>
+    <!--<img src = '{{user.pictureUrl}}' class = 'profileimg'>-->
+    <div style="background:no-repeat url({{user.pictureUrl}}); background-size: cover; background-position: top center; height: 390px; width: auto"></div>
     <a href='/edit' class = 'editimg'><div><img src = 'images/Editicon.svg'></div></a>
     <div class = "usertext">
         <h1>{{ user.name }}</h1>
         <div class = 'petcontainer'>
-            <h2>Pets</h2>
+            <h2>Pet</h2>
             <div class = 'petimages'>
                 {{#if pet.petPictureUrl}}
-                    <a class = 'petimage'><div><img src = '{{pet.petPictureUrl}}' class = 'petimg'></div></a>
+                    <a class = 'petimage' class = "addpetdiv" style="margin-right: 15px;"><div style="background:no-repeat url({{pet.petPictureUrl}}); background-size: cover; width: 100px; height:60px; background-position: center;"></div></a>
+                    <a href = '/add-pet' class = "addpetdiv"><div><img src = 'images/editicon2.svg' class = 'innerimage'></div></a>
+                {{else}}
+                    <a href = '/add-pet' class = "addpetdiv"><div><img src = 'images/plus.svg' class = 'innerimage'></div></a>
                 {{/if}}
-                    <a href = '/add-pet'><div class = "addpetdiv"><img src = 'images/plus.svg'></div></a>      
+                          
             </div>
         </div>
         <div class = 'descriptiondiv'>
